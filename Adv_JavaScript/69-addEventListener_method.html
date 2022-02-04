@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener Method</title>
+</head>
+<body>
+    <button id="mybtn">Click Me</button>
+
+    <script>
+        var btn = document.getElementById("mybtn");
+        
+        function disp1(){alert("Function 1");};
+        function disp2(){alert("Function 2");};
+        
+        // adds event to any element and not overwrite when two functions are for same event
+        btn.addEventListener('click', disp1);
+        btn.addEventListener('click', disp2);
+    </script>
+</body>
+</html>

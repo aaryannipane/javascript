@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY CHILDREN AND FIND METHODS</title>
+    <style>
+        .main-outer{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 10px;
+        }
+        .outer{
+            background-color: aquamarine;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .inner{
+            background-color: blanchedalmond;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .inner div{
+            display: inline-block;
+            margin: 0 10px 0 10px;
+            width: 250px;
+            height: 100px;
+            background-color: chartreuse;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery children and find methods</h1>
+    <p><b>Descendants</b> Methods are:</p>
+    <ul>
+        <li>children()</li>
+        <li>find()</li>
+    </ul>
+
+    <hr>
+    <div class="main-outer">
+        <h1>Main Outer</h1>
+        <div class="outer">
+            <h1>Outer</h1>
+            <div class="inner">
+                <h1 id="child-head">Inner</h1>
+                <div>A</div>
+                <div>B</div>
+                <div id="child-c">C</div>
+                <div>D</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // children() targets all children of the element
+            $('.main-outer').children().css({'border':'2px dashed red'});
+                                    // OR
+            // targets only specified children of the element
+            $('.inner').children('#child-c').css({'border':'2px dashed white'});
+
+            // find() finds specifide children, grand-children and great-grand-children of any element
+            $('.main-outer').find('#child-head').css({'font-style':'italic', 'color':'darkblue', 'border':'5px dotted black'});
+
+            // HAVING ANY DOUBTS :- https://youtu.be/AV3_l6QxHRc?list=PL0b6OzIxLPbzSyiC0PFaqeabe1aGhfrbW
+        })
+    </script>
+
+</body>
+</html>

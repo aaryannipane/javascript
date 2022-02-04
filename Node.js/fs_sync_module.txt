@@ -1,0 +1,4 @@
+This File is created with node js module fs.writeFileSync()
+Hello I am Updated
+
+This Data is Appended in this file with fs.appendFileSync()

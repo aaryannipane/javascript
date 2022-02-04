@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARIABLE SCOPE</title>
+    <script>
+
+        // GLOBAL VARIABLE :- Accessible from anywere.
+        var a = 10; 
+        function add(b)
+        {
+            document.write((a+b)+"<br>"); // a IS GLOBAL VARIABLE
+        }
+        add(10);
+
+        // LOCAL VARIABLE :- Not accessible to anywhere except function
+        function disp()
+        {
+            var name = 'I am Local variable inside function'; // local variable
+            document.write(name +"<br>"+"<br>");
+        }
+        disp();
+
+        // 2
+        function disp2()
+        {
+            hello = 'I am global variable inside function'; // global variable inside function
+            document.write(hello + "<br>");
+        }
+        disp2();
+        document.write(hello + "<br>" + "<br>" );
+
+        // 3
+        function outer_func()
+        {
+            var i = 'Outer func';
+
+            function inner_func()
+            {
+                var j = 'Inner func';
+                document.write(i +"<br>"); // can use outer function variable inside inner function but not inner function variable used in outer function
+                document.write(j +"<br>");
+            }
+            inner_func();
+        }
+        outer_func()
+
+    </script>
+</head>
+<body> 
+    
+</body>
+</html>

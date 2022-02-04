@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCK SCOPE</title>
+    <script>
+
+
+        // var :- It has scope anywhere in program when define in block
+        if(true)
+        {
+            var i = 'I am var keyword'; // global variable
+            document.write(i +"<br>");
+
+        }
+        document.write(i +"<br>");
+
+
+        // let :- It is used to create variable which has only scope in its block
+        if(true)
+        {
+            let a = 'I am let keyword'; // local variable
+            document.write(a +"<br>");
+        }
+        document.write(a +"<br>"); // error in console
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

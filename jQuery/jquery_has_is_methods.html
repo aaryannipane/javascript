@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY HAS IS METHODS</title>
+    <style>
+        .first{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery has, is methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>has()</li>
+        <li>is()</li>
+    </ul>
+
+    <hr>
+    <div class="first">
+        <h1>first Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+        <p>Lorem ipsum <i>dolor</i>, sit amet consectetur adipisicing elit. Aspernatur, perspiciatis?</p>
+    </div>
+    <ul id="myid">
+        <li>Orange</li>
+        <li><span>Apple</span></li>
+        <li>Banana</li>
+        <li>Grape</li>
+    </ul>
+    <p>Lorem ipsum dolor sit, <span> amet consectetur adipisicing</span> elit. Delectus, officia.</p>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // has()
+            $('p').has('i, span').css('background','yellow')
+
+            // is() it returns true or false
+            $('p').click(function(){
+                if($(this).parent().is('div')){
+                    $(this).css({'background':'red'});
+                }
+                // https://www.youtube.com/watch?v=_6_xv-_YCmw&list=PL0b6OzIxLPbzSyiC0PFaqeabe1aGhfrbW&index=37&t=200s
+            })
+
+        })
+    </script>
+
+</body>
+</html>

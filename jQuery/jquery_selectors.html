@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY SELECTORS</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+        #box{
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Selectors</h1>
+
+    <div id="box" class="test">
+        <h2>Text Box1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quos.</p>
+    </div>
+
+    <ul id="list">
+        <li>Orange</li>
+        <li class="test">Green</li>
+        <li>Red</li>
+        <li class="test">Yellow</li>
+    </ul>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+
+        $(document).ready(()=>{
+
+            // BASIC SELECTORS
+            // select by id
+            var id = $('#idName');
+            $('#list').css('background-color', 'lightgrey'); // try it with all selectors 
+
+            // select by class name
+            var className = $('.className');
+            
+            // select by tag name
+            var tagName = $('tagName');
+            // eg:- $('p') selects all paragraph tags in document
+
+            // ADVANCE SELECTORS
+            // (star selector) select all
+            var all = $('*');
+
+            // parent's child selector
+            var child = $('ul li');
+
+            // multiple class selector
+            var multipleClass = $('.class1, .class2');
+
+            // multiple tag selector
+            var multipleTag = $('p, h1, div');
+
+            // seudo selector
+            var firstPTag = $('p:first'); // selects first p tag in document
+            var lastPTag = $('p:last');   // selects last p tag in document
+            var evenLi = $('li:even');    // slects even li tag
+            var oddLi = $('li:odd');    // slects odd li tag
+
+            // eq(equation) seudo selector
+            $('ul li:eq(0)').css('background-color', 'orange')
+
+            // gt(greater than) seudo selector
+            $('ul li:gt(2)').css('font-weight', 'bold'); //selects li which is greater than 0 index
+
+            // lt(less than) seudo selector
+            $('ul li:lt(3)').css('font-style', 'italic'); //selects li which is less than 3 index
+
+        })
+
+    </script>
+</body>
+</html>

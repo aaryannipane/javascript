@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>childNodes & children</title>
+</head>
+<body>
+    <p>Hello World!</p>
+
+    <!-- JavaScript -->
+    <script>
+
+        // childNodes :- returns every node
+        var access = document.querySelector("body");
+        console.log(access.childNodes);
+
+        // children :- returns element node
+        console.log(access.children);
+ 
+        // to display text of an element  (textContent property)
+        // document.write(access.children[0].textContent); // Hello World!
+
+        // modify text inside an element
+        access.children[0].textContent = "Bye World!";
+
+    </script>
+
+</body>
+</html>

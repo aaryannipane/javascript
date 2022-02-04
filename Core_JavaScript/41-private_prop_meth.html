@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIVATE PROPERTY & METHOD</title>
+    <script>
+
+        var Mobile = function (){
+            this.model = 'Iphine X';
+            // private property
+            var price = '50,000 rs';
+            
+            var ram = function (){
+                return '32gb';
+            };
+
+            // access private property
+            this.sell = function (){
+                return (price);
+            };
+
+        }
+
+        // object
+        var iphone = new Mobile();
+
+        // access to private property
+        document.write(iphone.sell());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

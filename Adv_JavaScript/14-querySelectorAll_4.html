@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll with loop</title>
+</head>
+<body>
+    <h1 id="show" class="geek">querySelectorAll with loop</h1>
+    <p class="geek">hello everybody</p>
+    <div id="show2">
+        <p id="show1">my name is nothing</p>
+        <p class="geek">my name is nothing</p>
+    </div>
+    <p class="myclass">the end</p>
+    <!-- JavaScript -->
+    <script>
+
+        var data = document.querySelectorAll("p.geek");
+        var len = data.length;
+
+        // loop
+        for(let i=0; i<len; i++)
+        {
+            document.write(data[i] + "<br>");
+            console.log(data[i]);
+        }
+
+    </script>
+</body>
+</html>

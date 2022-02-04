@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROPERTIES OF NODE OBJECT</title>
+</head>
+<body>
+    
+    <h1 id="myid">
+        We are Learning JS 
+        <!-- This is comment -->
+    </h1>
+    <p id="myid1">I am Paragraph</p>
+    <script>
+
+        // document
+        document.write("<hr>------------ Document ------------<hr>");
+        document.write(document.nodeName + "<br>");
+        document.write(document.nodeValue + "<br>");
+        document.write(document.nodeType + "<br>");
+        console.log(document.nodeName);
+        console.log(document.nodeValue);
+        console.log(document.nodeType);
+
+        // Element
+        document.write("<hr>------------ Element ------------<hr>");
+        var elm = document.getElementById("myid");
+
+        document.write(elm.nodeName + "<br>");
+        document.write(elm.nodeValue + "<br>");
+        document.write(elm.nodeType + "<br>");
+        console.log(elm.nodeName);
+        console.log(elm.nodeValue);
+        console.log(elm.nodeType);
+
+        // Text
+        document.write("<hr>------------ Text ------------<hr>");
+        var elm1 = document.getElementById("myid");
+
+        // h1 first child is text
+        document.write(elm1.firstChild.nodeName + "<br>");
+        document.write(elm1.firstChild.nodeValue + "<br>");
+        document.write(elm1.firstChild.nodeType + "<br>");
+        console.log(elm1.firstChild.nodeName);
+        console.log(elm1.firstChild.nodeValue);
+        console.log(elm1.firstChild.nodeType);
+
+        // Comment
+        document.write("<hr>------------ Comment ------------<hr>");
+        var elm1 = document.getElementById("myid");
+
+        // h1 firstChild.nextSibling is comment
+        document.write(elm1.firstChild.nextSibling.nodeName + "<br>");
+        document.write(elm1.firstChild.nextSibling.nodeValue + "<br>");
+        document.write(elm1.firstChild.nextSibling.nodeType + "<br>");
+        console.log(elm1.firstChild.nextSibling.nodeName);
+        console.log(elm1.firstChild.nextSibling.nodeValue);
+        console.log(elm1.firstChild.nextSibling.nodeType);
+
+        // change value of text 
+        var txt = document.getElementById("myid1").firstChild.nodeValue = "I Am Changed By JS";
+        // var txt = document.getElementById("myid1").innerHTML= "I Am Changed By JS";
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACTORY FUNCTION</title>
+    <script>
+
+        // factory function without parameter
+        function mobile(){
+            return {
+                model : undefined,
+                ram : undefined,
+                price : function (){ return "Price 200rs"; }
+            };
+        }
+
+        // objects
+        samsung = mobile();
+        samsung['model'] = 'Galaxy';
+        samsung['ram'] = '2GB';
+        document.write(samsung.model + ' ' + samsung.ram + ' ' + samsung.price() + "<br><hr>");
+        nokia = mobile();
+        
+
+        // factory function with parameter
+        function phone(price){
+            return {
+                model : undefined,
+                ram : undefined,
+                price : price
+            };
+        }
+
+        // objects
+        apple = phone('80,000 rs');
+        apple.model = 'Iphone xs';
+        apple.ram = '6gb';
+        document.write("Model: "+apple.model+"<br>"+"Ram: "+apple.ram+"<br>"+"Price: "+apple.price);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

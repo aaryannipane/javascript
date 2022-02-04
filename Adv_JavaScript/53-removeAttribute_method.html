@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMOVEATTRIBUTE METHOD</title>
+    <style>
+        .para{
+            background: lightblue;
+            border: .5px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <p id="myp" class="para">Paragraph</p>
+    <button id='remove'>Remove Class</button>
+
+    <script>
+
+        var myp = document.getElementById("myp");
+        document.querySelector('#remove').addEventListener('click', (e)=>{
+            // remove any attribute with this method
+            myp.removeAttribute("class");
+        })
+        
+
+        console.log(myp);
+
+    </script>
+
+</body>
+</html>

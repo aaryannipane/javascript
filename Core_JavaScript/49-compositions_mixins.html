@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPOSITION OR MIXINS</title>
+    <script>
+
+        // MIXIN FUNCTION :- use this function for making mixins for constructor or object literal
+        function mixin(target, ...sources){
+            return (Object.assign(target, ...sources));
+        }
+
+        // COMPOSITION OR MIXINS(FEATURES)
+        var eating = {
+            eat : function (){
+                return "I can eat <br>";
+            }
+        }
+        var talking = {
+            talk : function (){
+                return "I can talk <br>";
+            }
+        }
+        var walking = {
+            walk : function (){
+                return "I can walk <br>";
+            }
+        }
+        var starting = {
+            start : function (){
+                return "Robo start <br>";
+            }
+        }
+
+        // ADD ANY FEATURES TO ANY OBJECT
+        var Animal = Object.assign({}, eating, talking, walking);
+        var Robo = Object.assign({}, starting, talking, walking);
+
+        // feature access
+        document.write("<h2>Human</h2>");
+        document.write(Animal.eat());
+        document.write(Animal.talk());
+        document.write(Animal.walk());
+
+        document.write("<h2>Robo</h2>");
+        document.write(Robo.start());
+        document.write(Robo.talk());
+        document.write(Robo.walk());
+
+        // COMPOSITION/MIXINS FOR CONSTRUCTOR
+        var Human = function (){
+
+        }
+
+        // COMPOSITE FEATURES TO HUMAN
+        Object.assign(Human.prototype, eating, talking, walking);
+
+        // OBJECTS OF HUMAN
+        var Aryan = new Human();
+        var Babu  = new Human();
+        var Ravan = new Human();
+
+        // OBJECTS OF HUMAN ACCESS ALL FEATURES WHICH ARE ASSIGN
+        document.write("<h2>Human Constructor Object </h2>");
+        document.write(Aryan.walk());
+        document.write(Babu.walk());
+        document.write(Ravan.walk());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

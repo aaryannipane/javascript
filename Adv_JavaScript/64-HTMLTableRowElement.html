@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLTableRowElement</title>
+</head>
+<body>
+    <table border="1" id="mytab">
+        <caption>My Table Caption</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11</td>
+                <td>Rahul</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Doe</td>
+                <td id="mytd">PHP</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>55</td>
+                <td>Soham</td>
+                <td>JSP</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var table = document.getElementById("mytab");
+
+        // access to rows
+        var myrows = table.rows;
+
+        // know length of cells in a row
+        console.log(myrows[0].cells.length);
+
+        // access particular cell in row without id
+        console.log(myrows[0].cells[0]); // 1st rows 1st cell
+        // OR
+        console.log(myrows[0].cells.item(0)); // 1st rows 1st cell
+
+        // access particular cell in row with id
+        console.log(myrows[2].cells.namedItem("mytd")); //3rd rows 3rd cell
+
+        // METHODS
+        // insertRow(index number)
+        var mycell = myrows[0].insertCell(3); // adds extra cell at 3 index in 0 index row 3 index cell
+        // add data to cell
+        mycell.innerHTML = "Fees";
+
+        // deleteRow(index number)
+        myrows[3].deleteCell(1); // removes 3rd index rows 1st index cell eg:- soham
+
+
+    </script>
+
+</body>
+</html>

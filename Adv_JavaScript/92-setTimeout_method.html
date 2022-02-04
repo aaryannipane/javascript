@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETTIMEOUT METHOD</title>
+    <style>
+
+        .change{
+            color: yellow;
+            background-color: grey;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="change">setTimeout Method</h1>
+
+    <script>
+        function changeCss(){
+            var elementClass = document.getElementById('change').classList.add('change');
+            // elementClass.add('change');
+        }    
+
+        var timeoutID = setTimeout(changeCss, 2000);
+
+    </script>
+
+</body>
+</html>

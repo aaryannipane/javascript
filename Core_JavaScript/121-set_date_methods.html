@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET DATE METHODS</title>
+    <script>
+
+        // new Date()
+        var tarikh = new Date();
+
+        // setDate(1-31)
+        tarikh.setDate(28);
+        document.write(`${tarikh} <hr>`);
+
+        // setMonth(0-11)
+        tarikh.setMonth(9);
+        document.write(`${tarikh} <hr>`);
+        
+        // setFullYear(year)
+        tarikh.setFullYear(2002);
+        document.write(`${tarikh} <hr>`);
+        
+        // setHours(0-23)
+        tarikh.setHours(05);
+        document.write(`${tarikh} <hr>`);
+        
+        // setMinutes(0-59)
+        tarikh.setMinutes(28);
+        document.write(`${tarikh} <hr>`);
+        
+        // setSeconds(0-59)
+        tarikh.setSeconds(28);
+        document.write(`${tarikh} <hr>`);
+        
+        // setMilliseconds(0-999)
+        tarikh.setMilliseconds(555);
+        document.write(`${tarikh} <hr>`);
+        
+        // setFullYear(year, month, day)  where month and day is optional
+        tarikh.setFullYear(2020, 09, 28);
+        document.write(`${tarikh} <hr>`);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

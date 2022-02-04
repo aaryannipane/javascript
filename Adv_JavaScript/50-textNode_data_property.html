@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXTNODE DATA PROPERTY</title>
+</head>
+<body>
+    <h2 id="myh2">This Is Heading</h2>
+
+    <script>
+        'use strict';
+
+        var myh2 = document.getElementById("myh2");
+        var text = myh2.firstChild;
+
+        // get data
+        console.log(text.data);
+
+        // set data
+        text.data = "I Am Data";
+
+    </script>
+
+</body>
+</html>

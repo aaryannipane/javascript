@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMISE AND ASYNC AWAIT</title>
+</head>
+<body style="background: darkgray;">
+    <h2 style="text-align: center; margin: 40px;">PROMISE AND ASYNC AWAIT</h2>
+
+
+    <script>
+
+        // SYNCRONOUS :- completes code for each line and waits for first to execute and than executes second line
+        function syncfunc(){
+            console.log("Syncronous Function Called");
+        }
+
+        console.log("Start");
+        syncfunc();
+        console.log("End");
+
+
+
+
+        // ASYNCRONOUS :- it runs in background and execute when data or timeout is there
+        console.log("Start");
+        setTimeout(()=>{
+            console.log("Example of Asyncronous function called")
+        }, 2000)
+        console.log("End");
+        console.log("________________________________________________________________________________");
+
+
+
+
+        // CALLBACK :- usefull for this watch video https://youtu.be/V2NeK5UT5Oc?t=473 (Don't use this method this is known as callback hell instead use promise)
+        // console.log("Start");
+        // function getName(name, callback){
+        //     setTimeout(()=>{
+        //         console.log("inside setTimeout function");
+        //         callback(name);
+        //     }, 2000);
+        // }
+
+        // function getHobbies(name, callback){
+        //     setTimeout(()=>{
+        //         console.log("inside getHobbies Function");
+        //         callback([1, 2, 3, 4, 5])}
+        //     , 1000);
+        // }
+
+        // const nm = getName("Aryan", getHobbies(nm, hobby=>{console.log(hobby)}));
+        // console.log("End");
+
+        // ____________________________________________/-----------------------\________________________________________________
+
+        // PROMISE :- A Promise is an object representing eventual completion or failure of an asynchronous operation.
+        //            A Javascript Promise object contains both the producing code and calls to the consuming code. it can be used to deal with Asyncrhronous operation in JS.
+
+        // PROMISE STATE:- 
+        //  Pending - Initial State, Not yet Fulfilled or Rejected.
+        //  FulFilled/Resolved - Promise Completed
+        //  Rejected - Promise Failed
+
+        // Promise Video :- https://youtu.be/V2NeK5UT5Oc?t=1272
+
+        // CREATING PROMISE:- Promise() - A Promise object is created using new keyword and its constructor. This constructor takes a function, called the "executor function", as it's parameter. This function should take two functions as parameters. The first of this function (resolve) is called when the asynchronous task completes succesfully and returns the result of the task as a value. The second (reject) is called when the task fails, and returns the reson for failure, ehich is typically an error object.
+
+        /* SYNTAX :- const promiseObj = new promise((resolve, reject)=>{
+            Do asynchronous operation
+            resolve(value)
+            reject(error)
+        })*/ // this is producing code
+
+        // Then() - The then() method returns a promise. it takes upto two arguments: callback functions for success and failure cases of the promise. As then method returns a promise so we can do method chaining.
+
+        // SYNTAX :- promiseObj.then(onResolved, onRejected)
+        // onResolved - A function called when the promise is fulfilled, this function has one argument, the fulfillment value. 
+        // onRejected - A function called when the promise is rejected. this function has one argument, the rejection reason
+
+        /*SYNTAX :- promiseObj.then(value=>{
+            console.log(value);
+        }, error=>{
+            console.log(error);
+        })*/ // this is Consuming code
+
+        // Catch() - The catch method is used for error handling in promise composition. Since it returns a promise, it can be chained in the same way as it sister method, then()
+
+        // SYNTAX :- catch(callback)
+        // where the callback is the function when the promise is rejected. This function has one argument
+        // error - The rejection error.
+
+        /* SYNTAX:- 
+            const promiseObj = new promise((resolve, reject)=>{
+                let req = true;
+                if(req==true){
+                    resolve("Request Success");
+                }
+                else{
+                    reject(Request Rejected);
+                }
+            }).then((value)=>{
+                console.log(value)
+            }).catch((error)=>{
+                console.log(error)
+            })
+        */
+
+        // Finally() - The finally() method returns a promise. When the promise is settled, i.e either fulfilled or rejected, the specified callback function is executed. This provides a way for code to be run wheather the promise was fulfilled successfuly or rejected once the promise has been dealt with.
+        // This helps to avoid duplicating code in both the promise's then() and catch() handlers.
+
+        // SYNTAX :- finally(callback)
+
+        /* SYNTAX:-
+            const promiseObj = new promise((resolve, reject)=>{
+                let req = true;
+                if(req==true){
+                    resolve("Request Success");
+                }
+                else{
+                    reject(Request Rejected);
+                }
+            }).then((value)=>{
+                console.log(value)
+            }).catch((error)=>{
+                console.log(error)
+            }).finally(
+                ()=>{console.log("Cleaned");}
+            )
+        */
+
+    // _____________________________________________________/---------------------\_______________________________________________
+
+    // Basic example 1:- 
+    const promiseObj1 = new Promise((resolve, reject)=>{
+        let req = false;
+        if(req==true){
+            resolve("Request Success");
+        }
+        else{
+            reject("Request Rejected");
+        }
+    }).then((value)=>{console.log(value)},
+    // (er)=>{console.log(er)}
+    ).catch((er)=>{console.log(`This is ${er}`)}
+    ).finally(()=>{console.log("Cleaned Up")});
+
+
+    // Easy code for callback hell on top of javascript
+    function getName(name){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log("inside setTimeout function");
+                resolve(name);
+            }, 1000);
+        })
+    } // producing function code
+
+    function getHobbies(name){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log("inside getHobbies Function");
+                resolve([1, 2, 3, 4, 5])}
+            , 1000);
+        })
+    }
+
+    getName("Aryan").then(nm=>getHobbies(nm)).then(data=>console.log(data))
+    .catch(err=>console.log(err))
+    .finally(()=>{console.log("All Done")});
+
+
+    // _________________________________________________________________/---------------------------\___________________________________________________________
+
+    // WATCH :- https://youtu.be/V2NeK5UT5Oc?t=3610 
+    // ASYNC :- This keyword is used to turn a function declaration to async function.
+    // ASYNC FUNCTION :- An async function is a function declared with the async keyword. An async function is a function that knows how to expect the possibility of the await keyword being used to invoke asynchronous code. it returns a promise
+
+    // AWAIT :- The await operator is used to wait for a promise. it can only be used inside an async function within regular javscript code
+    //          await can can be put in front of any async promise-based function to pause your code at that line until the promise fulfills, then return the resulting value.
+
+    // dont write producing code here only write consuming code here
+    async function showHobby(){
+        // for errror handling use try catch 
+        try {
+            const nm = await getName("Aryan");
+            const hobby = await getHobbies(nm);
+            console.log(hobby);
+        } catch{
+            console.log("Couldn't recive data from database");
+        }
+        
+    }
+
+    showHobby()
+
+    </script>
+
+</body>
+</html>

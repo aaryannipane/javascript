@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTRIBUTES PROPERTY</title>
+</head>
+<body>
+    <h2 id="myh2" class="myclass" title="mytitle">This is heading</h2>
+
+    <script>
+
+        var myh2 = document.getElementById("myh2");
+
+        // get collection of attributes
+        console.log(myh2.attributes);
+
+        // get specific attribute 
+        console.log(myh2.attributes["id"]); // myh2.attributes[0] where 0 is index no for id
+
+    </script>
+
+</body>
+</html>

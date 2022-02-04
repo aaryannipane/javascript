@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll METHOD</title>
+</head>
+
+<body>
+    <h1 id="show" class="geek">querySelectorAll method</h1>
+    <p class="geek">hello everybody</p>
+    <div class="myclass">
+        <p id="show1">my name is nothing</p>
+        <p class="myclass">inside div</p>
+    </div>
+    <p class="myclass">the end</p>
+    
+    <!-- JavaScript -->
+    <script>
+
+        // Element Selector
+        var result1 = document.body.querySelectorAll("p");
+        document.write(result1 + "<br>");
+        console.log(result1);
+
+        // class selector
+        var result2 = document.querySelectorAll(".myclass, .geek");
+        document.write(result2 + "<br>");
+        console.log(result2);
+        
+        // Attribute selector
+        var result3 = document.querySelectorAll("p[class='myclass']");
+        // var result3 = document.querySelectorAll("p[id]"); // p with id list
+        document.write(result3 + "<br>");
+        console.log(result3);
+        
+        // group selector
+        var group = document.querySelectorAll("p, div, h1"); // selects tags and collect in same list grouping
+        console.log(group);
+
+        // Universal selector
+        var result4 = document.querySelectorAll("*"); //selects all tagspresent in document
+        console.log(result4);
+        
+    </script>
+</body>
+
+</html>

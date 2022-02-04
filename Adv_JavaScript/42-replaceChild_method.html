@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPLACE CHILD METHOD</title>
+</head>
+<body>
+    <div id="container">
+        <li>BMW</li>
+        <li id="removeFruit">Apple</li>
+        <li>Ford</li>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        var parentNode = document.getElementById("container");
+        var replaceNode = document.getElementById("removeFruit");
+
+        var newNode = document.createElement("li");
+        newNode.textContent = "Tata";
+
+        var replacedNode = parentNode.replaceChild(newNode, replaceNode);
+
+    </script>
+
+</body>
+</html>

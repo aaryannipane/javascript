@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY HASCLASS METHOD</title>
+    <style>
+        .container{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+        }
+        .class1{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery hasClass method</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>hasClass() :- returns true when class exist else false</li>
+    </ul>
+
+    <hr>
+    <div class="container class1">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button>Toggle class1 check console</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // hasClass()
+            $('button').click(function(){
+                $('.container').toggleClass('class1');
+                var result = $('.container').hasClass('class1');
+                console.log( 'true if class exist else false = ' +result)
+            })
+
+        })
+    </script>
+
+</body>
+</html>

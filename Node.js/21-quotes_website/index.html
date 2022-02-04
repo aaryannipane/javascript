@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUOTE'S WEBSITE</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: #273c75;
+            font-family: sans-serif;
+        }
+        .container{
+            display: inline-block;
+            background-color: #00a8ff;
+            width: 800px;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f2f2f2;
+            width: 650px;
+            height: 450px;
+            padding: 3em;
+            box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: popOut 0.5s ease-in-out;
+        }
+        @keyframes popOut{
+            from{
+                top: -450px;
+            }
+            to{
+                top: 50%;
+            }
+        }
+
+        #quotes{
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            padding-right: 30px;
+        }
+        #author{
+            position: absolute;
+            bottom: 110px;
+            left: 470px;
+            font-style: italic;
+        }
+        #author>span{
+            font-style: normal;
+        }
+        #newQ{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            line-height: 2;
+            font-weight: bolder;
+            /* border: 1px solid red; */
+            text-align: center;
+            padding: 5px 0 5px 0;
+            background-color: #487eb0;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-user-select: none;
+        }
+        #newQ:hover{
+            background-color: #2972b6;
+        }
+        #newQ:active{
+            background-color: #487eb0;
+        }
+
+        #tweet{
+            position: absolute;
+            top: 0;
+            right: 0px;
+            cursor: pointer;
+            user-select: none;
+            background-color: #44bd32;
+            padding: 5px;
+            transition: all 0.2s ease-in;
+        }
+        #tweet:hover{
+            box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div id="quotes"></div>
+            <div id="author"></div>
+            <p id="newQ">New Quote</p>
+            <p id="tweet">Tweet</p>
+        </div>
+    </div>
+
+    <script>
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const newQBTN = document.getElementById("newQ");
+        const tweet = document.getElementById("tweet");
+
+        let realData = "";
+        let quoteData = "";
+
+        const tweetNow = ()=>{
+            let tweetPost = `https://twitter.com/intent/tweet?text=${quoteData.text} ~${quoteData.author}`;
+            window.open(tweetPost);
+        }
+
+        const getNewQuotes = ()=>{
+            let rnum = Math.floor(Math.random()*1642);
+            quoteData = realData[rnum];
+            quotes.innerHTML = `${realData[rnum].text}`;
+            if(realData[rnum].author == null){
+                author.innerHTML = `<span>By </span>Unknown`;
+            }
+            else{
+                author.innerHTML = `<span>By </span>${realData[rnum].author}`;
+            }
+        }
+        const getQuotes = async ()=>{
+            const api = "https://type.fit/api/quotes";
+            try {
+                let data = await fetch(api);
+                realData = await data.json();
+                console.log(realData.length);
+                getNewQuotes();
+                // console.log(realData[10].text);
+                // console.log(realData[10].author);
+            } catch (error) {
+                
+            }
+        }
+
+        getQuotes();
+        newQBTN.addEventListener('click', getNewQuotes);
+        tweet.addEventListener('click', tweetNow);
+    </script>
+</body>
+</html>

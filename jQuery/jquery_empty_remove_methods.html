@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY EMPTY REMOVE METHODS</title>
+    <style>
+        .container{
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Empty Remove Mehods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>empty()</li>
+        <li>remove()</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button id="emptybtn">Empty Box</button>
+    <button id="removebtn">Remove Box</button>
+
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // empty()
+            $('#emptybtn').click(function(){
+                $('.container').empty();
+            })
+
+            // remove()
+            $('#removebtn').click(function(){
+                $('.container').remove();
+            })
+
+        })
+    </script>
+</body>
+</html>

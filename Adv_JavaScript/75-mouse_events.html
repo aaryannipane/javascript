@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUSE EVENTS</title>
+    <style>
+        #container div{
+            color: aliceblue;
+            cursor: pointer;
+        }
+        #container div:hover{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="background-color: blanchedalmond;">
+        <div id="mousedown" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkblue;">mousedown</div>
+        <div id="mouseup" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkcyan;">mouseup</div>
+        <div id="click" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkgoldenrod;">click</div>
+        <div id="dblclick" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkgray;">dblclick</div>
+        <div id="mouseenter" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkgreen;">mouseenter</div>
+        <div id="mouseleave" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkgrey;">mouseleave</div>
+        <div id="mouseover" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkkhaki;">mouseover</div>
+        <div id="mouseout" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkmagenta;">mouseout</div>
+        <div id="mousemove" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkolivegreen;">mousemove</div>
+        <div id="contextmenu" style="margin:10px 15px;width: 100px;height: 25px;background-color: darkorange;">contextmenu</div>
+    </div>
+
+    <script>
+
+        function show(e){
+            console.log(e.type);
+        }
+
+
+        document.getElementById("container").addEventListener('mouseleave',show);
+
+        document.getElementById("mousedown").addEventListener('mousedown', show);
+        document.getElementById("mouseup").addEventListener('mouseup', show);
+        document.getElementById("click").addEventListener('click', show);
+        document.getElementById("dblclick").addEventListener('dblclick', show);
+        document.getElementById("mouseenter").addEventListener('mouseenter', show);
+        document.getElementById("mouseleave").addEventListener('mouseleave', show);
+        document.getElementById("mouseover").addEventListener('mouseover', show);
+        document.getElementById("mouseout").addEventListener('mouseout', show);
+        document.getElementById("mousemove").addEventListener('mousemove', show);
+        // use full for no contextmenu right click
+        document.getElementById("contextmenu").addEventListener('contextmenu', show);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECK PROPERTY EXIST</title>
+    <script>
+
+        // constructor
+        function Mobile(price){
+            this.model = 'Nokia';
+            this.price = price;
+            this.info = function (){
+                document.write(this.model + this.price);
+            };
+        }
+
+        // object
+        var nokia = new Mobile('700rs');
+        
+
+        // check property exist with Typeof operator
+        if(typeof nokia.price != 'undefined')
+        {
+            document.write("Exist<br>");
+        }
+        else{
+            document.write("Not exist<br>");
+        }
+// _________________________OR____________________________________________________________________________________________________________
+
+        // // check property exist with in operator
+        // if('price' in nokia)
+        // {
+        //     document.write("Exist<br>");
+        // }
+        // else{
+        //     document.write("Not exist<br>");
+        // }
+// _________________________OR____________________________________________________________________________________________________________
+
+        // // check property exist with hasOwnProperty()
+        // if(nokia.hasOwnProperty('price'))
+        // {
+        //     document.write("Exist<br>");
+        // }
+        // else{
+        //     document.write("Not exist<br>");
+        // }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.5.1.min.js"></script>
+    <title>JQUERY BASIC SYNTAX</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #box1{
+            display: inline-block;
+            width: 400px;
+            height: 200px;
+            padding: 20px;
+            margin-right: 400px;
+            background-color: gold;
+            border: 1px solid black;
+        }
+        #box2{
+            display: inline-block;
+            width: 400px;
+            height: 200px;
+            padding: 20px;
+            background-color: orangered;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Basic Syntax</h1>
+    <div id="box1">
+        <h1>Text 1</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, optio!</p>
+    </div>
+    <div id="box2">
+        <h1>Text 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, perferendis.</p>
+    </div>
+    <script>
+        // To start jquery code do this 
+        $(document).ready(function(){
+        // whenever document get ready(loaded) this function will run
+        // here '$(socument)' is selector use to target DOM elements (use $ to select any element)
+        // here '.ready()' is a method use on selector to do some work when selector element is ready
+
+        // get element by id and print innerhtml of that element
+        var a = $('#box1').html();
+        console.log(a);
+
+        });
+
+        // another way to write jquery is
+        $(function(){
+            // same as above code
+        });
+    </script>
+</body>
+</html>

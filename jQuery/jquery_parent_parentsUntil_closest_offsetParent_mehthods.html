@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY PARENT PARENSTUNTIL CLOSEST OFFSETPARENT METHODS</title>
+    <style>
+        .main-outer{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 10px;
+        }
+        .outer{
+            background-color: aquamarine;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .inner{
+            background-color: blanchedalmond;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .inner div{
+            display: inline-block;
+            margin: 0 10px 0 10px;
+            width: 250px;
+            height: 100px;
+            background-color: chartreuse;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery parent, parentsUntil, closest, offsetParent methods</h1>
+    <p><b>Ancestor</b> Methods are:</p>
+    <ul>
+        <li>parent()</li>
+        <li>parents()</li>
+        <li>parentsUntil()</li>
+        <li>closest()</li>
+        <li>offsetParent()</li>
+    </ul>
+
+    <hr>
+    <div class="main-outer">
+        <h1>Main Outer</h1>
+        <div class="outer">
+            <h1>Outer</h1>
+            <div class="inner">
+                <h1 id="child-head">Inner</h1>
+                <div>A</div>
+                <div>B</div>
+                <div id="child-c">C</div>
+                <div>D</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // childs parent()
+            $('#child-c').parent().css({background:"red"})
+
+            // childs All parents()
+            // $('#child-c').parents().css({background:"red"})
+            // we can target any specific parent
+            $('#child-c').parents('.main-outer').css({background:"red"})
+
+
+            // child to specific parentsUntill()
+            $('#child-c').parentsUntil('.main-outer').css({background:"purple"})
+
+            // targets only child with parent having property psoition
+            $('#child-c').offsetParent().css({background:"gold"})
+
+            // finds childs closest specified parent element
+            $('#child-c').closest('.outer').css({background:"grey"})
+
+            // HAVING ANY DOUBT WATCH :- https://www.youtube.com/watch?v=iKGTJDlhCF0&list=PL0b6OzIxLPbzSyiC0PFaqeabe1aGhfrbW&index=33
+
+        })
+    </script>
+
+</body>
+</html>

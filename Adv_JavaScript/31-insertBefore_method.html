@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSERT BEFORE METHOD</title>
+</head>
+<body>
+    <h3>JavaScript Frameworks</h3>
+    <ul id="myul">
+        <li>Jquery</li>
+        <li id="myang">Angular JS</li>
+        <li>React JS</li>
+        <li id="golang">GoLang</li>
+    </ul>
+
+    <hr>
+
+    <h3>Top Mobile Brands</h3>
+    <ul id="myul2">
+        <li id="sam">Samsung</li>
+        <li id="app">Apple</li>
+        <li>Nokia</li>
+        <li>Asus</li>
+    </ul>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // access parentNode
+        var parentNode = document.getElementById("myul");
+        // access referenceNode
+        var refNode = document.getElementById("myang");
+
+        // create new li element to insert in parent node befor refnode --> new li
+        var myli = document.createElement("li");
+        // insert text to myli node
+        myli.textContent = "JSON";
+
+        // insertBefore() method
+        var insertedNode = parentNode.insertBefore(myli, refNode);
+        // document.write(insertedNode)
+
+        // insert existing li before Samsung
+        var refNode = document.getElementById("sam");
+        var existingliNode = document.getElementById("app");
+        // parent node
+        var parentNode = document.getElementById("myul2");
+
+        var insertedNode = parentNode.insertBefore(existingliNode, refNode);
+
+    </script>
+
+
+</body>
+</html>

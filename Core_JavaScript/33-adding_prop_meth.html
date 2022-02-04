@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDING PROPERTY & METHOD IN OBJECT</title>
+    <script>
+
+        // object
+        var fees = { };
+
+        // adding property
+        fees.Rohan = 100;
+        fees["Sumit"] = 200;
+        document.write(fees.Sumit + "<br>");
+
+        // adding method
+        fees.Total = function (){ return (100 + 200); };
+        fees["Sum"] = function (){ return (100 + 400); };
+        document.write(fees['Total']() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

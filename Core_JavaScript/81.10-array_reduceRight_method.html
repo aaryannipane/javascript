@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduceRight method</title>
+</head>
+<body>
+    <h1>array reduceRight method</h1>
+    <script>
+
+        // Array.reduceRight()
+            /*The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+            The reduceRight() works from right-to-left in the array. See also reduce().
+            The reduceRight() method does not reduce the original array.*/
+
+        // This example finds the sum of all numbers in an array:
+
+        var numbers1 = [45, 4, 9, 16, 25];
+        var sum = numbers1.reduceRight(myFunction);
+        console.log(sum)
+
+        function myFunction(total, value, index, array) {
+        return total + value;
+        }
+
+    </script>
+</body>
+</html>

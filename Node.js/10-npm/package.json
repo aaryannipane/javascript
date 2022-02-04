@@ -1,0 +1,15 @@
+{
+  "name": "10-npm",
+  "version": "1.0.0",
+  "description": "This is my first npm tutorial",
+  "main": "node_package_manager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aryan Nipane",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.5.2"
+  }
+}

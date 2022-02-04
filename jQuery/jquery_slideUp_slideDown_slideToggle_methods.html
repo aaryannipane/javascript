@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY SLIDEUP/SLIDEDOWN SLIDETOGGLE Methods</title>
+    <style>
+        .container{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery slideUp/slideDown slideToggle methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>slideUp()</li>
+        <li>slideDown</li>
+        <li>slideToggle</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button id="slideupbtn">slideUp</button>
+    <button id="slidedownbtn">slideDown</button>
+    <button id="slidetogglebtn">slideToggle</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // slideUp()
+            $('#slideupbtn').click(function(){
+                // $('.container').slideUp();
+                // $('.container').slideUp("slow");
+                // $('.container').slideUp("fast");
+                // $('.container').slideUp(2000);
+                $('.container').slideUp(2000, function () {
+                    console.log("Hello User");
+                });
+            })
+
+            // slideDown()
+            $('#slidedownbtn').click(function(){
+                // $('.container').slideDown();
+                // $('.container').slideDown("slow");
+                // $('.container').slideDown("fast");
+                // $('.container').slideDown(2000);
+                $('.container').slideDown(2000, function () {
+                    console.log("Hello User");
+                });
+            })
+
+            // slideToggle()
+            $('#slidetogglebtn').click(function(){
+                // $('.container').slideToggle();
+                // $('.container').slideToggle("slow");
+                // $('.container').slideToggle("fast");
+                // $('.container').slideToggle(2000);
+                $('.container').slideToggle(2000, function () {
+                    console.log("Hello User");
+                });
+            })
+
+        })
+    </script>
+
+</body>
+</html>

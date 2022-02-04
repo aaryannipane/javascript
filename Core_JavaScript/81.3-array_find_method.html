@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array find method</title>
+</head>
+<body>
+    <h1>array find method</h1>
+    <script>
+
+        // Array.find(): The find() method returns the value of the first array element that passes a test function.
+
+        // This example finds (returns the value of) the first element that is larger than 18:
+        var numbers = [4, 9, 16, 25, 29];
+        var first = numbers.find(myFunction);
+        console.log(first); // 25
+
+        function myFunction(value, index, array) {
+        return value > 18;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIN & MAX IN ARRAY</title>
+</head>
+<body>
+    
+    <script>
+
+        var num = [25, 55, 3, 100];
+
+        // to find maximum number in array we can use math object like math.max.apply(null, array_name)
+        document.write("Max num is "+Math.max.apply(null, num) + "<br>");
+
+        // to find minimum number in array we can use math object like math.min.apply(null, array_name)
+        document.write("Min num is "+Math.min.apply(null, num) + "<br>");
+
+        // max function
+        function myArrayMax(arr) {
+            var len = arr.length;
+            var max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                max = arr[len];
+                }
+            }
+            return max;
+        }
+        document.write("Max with function is "+ myArrayMax(num)+"<br>");
+
+        // min function
+        function myArrayMin(arr) {
+            var len = arr.length;
+            var min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                min = arr[len];
+                }
+            }
+            return min;
+        }
+        document.write("Min with function is "+ myArrayMin(num)+"<br>");
+
+
+    </script>
+
+</body>
+</html>

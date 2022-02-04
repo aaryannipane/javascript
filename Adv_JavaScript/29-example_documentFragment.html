@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPEND TEXT NODE</title>
+    <style>
+
+        #mydiv{
+            background: lightcoral;
+            height: 300px;
+        }
+        #mysec{
+            background: lightgreen;
+            height: 300px;
+        }
+        h2{
+            height: 50px;
+            border: 2px solid purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <h1 id="myh1">Append Text Node</h1>
+    </div>
+
+    <section id="mysec">
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var mysec = document.getElementById("mysec");
+
+        // create new document fragment
+        var df = document.createDocumentFragment();
+
+        // create new h2 element
+        var h2node = document.createElement("h2");
+
+        // create p element
+        var pnode = document.createElement("p");
+
+        // inseert text to h2 and p element NODE
+        h2node.textContent = "h2 from JS";
+        pnode.textContent = "p from JS";
+
+        // append h2node and pnode to document fragment
+        df.appendChild(h2node);
+        df.appendChild(pnode);
+        
+
+        // append document fragment to mysec (section)
+        mysec.appendChild(df);
+
+    </script>
+
+</body>
+</html>

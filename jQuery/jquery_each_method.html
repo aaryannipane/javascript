@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY EACH METHOD</title>
+</head>
+<body>
+    <h1>jQuery each methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>each()</li>
+    </ul>
+
+    <hr>
+    <ul id="myid">
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grape</li>
+    </ul>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // each()
+            $('#myid li').each(function(){
+                console.log($(this).text());
+            })
+
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstChild & firstElementChild</title>
+</head>
+<body>
+    <h1 id="head">
+        <!-- comment -->
+        <span>Hello There</span>
+    </h1>
+
+    <!-- JavaScript -->
+    <script>
+
+        var access = document.getElementById("head");
+
+        // firstChild
+        console.log(access.firstChild); // #text
+
+        // firstElementChild
+        console.log(access.firstElementChild); // <span>Hello There</span>
+
+        // display content of an element
+        document.write(access.firstElementChild.textContent);
+
+        // change content of element
+        access.firstElementChild.textContent = "Hello Here";
+
+        // NOTE --> lastChild, lastElementChild has same concept of firstSibling, firstElementChild just imagine last whenever there is first
+
+    </script>
+
+</body>
+</html>

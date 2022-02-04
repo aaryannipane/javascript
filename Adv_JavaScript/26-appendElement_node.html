@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPEND ELEMENT NODE</title>
+    <style>
+
+        #mydiv{
+            background: lightcoral;
+            height: 300px;
+        }
+        #mysec{
+            background: lightgreen;
+            height: 300px;
+        }
+        h2{
+            height: 50px;
+            border: 2px solid purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <h1 id="myh1">Append Element Node</h1>
+    </div>
+
+    <section id="mysec">
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        var myh1 = document.getElementById("myh1");
+        var mysec = document.getElementById("mysec");
+        
+        // Append Existing Element
+        mysec.appendChild(myh1); // TOGGLE comment
+
+        // Append New Element
+        var nayah2 = document.createElement("h2");
+        mysec.appendChild(nayah2);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREVIOUSSIBLING & PREVIOUSELEMENTSIBLING</title>
+</head>
+<body>
+    <h1 id="head">
+        <!-- comment -->
+        <span>we learn</span>
+        <em>JS</em>
+    </h1>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        var myhead = document.getElementById("head");
+        var myem = myhead.lastElementChild;
+
+        // previousSibling
+        var prevSibling = myem.previousSibling;
+        console.log(prevSibling)
+
+        // previousElementSibling
+        var prevSibling = myem.previousElementSibling;
+        console.log(prevSibling);
+
+        // NOTE --> nextSibling, nextElementSibling has same concept of previousSibling, previousElementSibling just imagine next whenever there is previous
+
+
+    </script>
+
+</body>
+</html>

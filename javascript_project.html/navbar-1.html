@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        body{
+            background-color: #000;
+            /* height: 100vh;
+            background: linear-gradient(45deg, red, green, blue, green, red);
+            background-size: 500%;
+            animation: anime 20s linear infinite; */
+        }
+
+        .header{
+            margin: auto;
+            width: 300px;
+            height: 180px;
+            background: rgb(10, 10, 10);
+            position: relative;
+            top: -140px;
+            align-items: center;
+            border-radius: 0 0 50px 50px;
+            transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+
+        .header::before, .header::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 0 50px 50px;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff000069);
+            z-index: -1;
+            transform: scale(1.01);
+            background-size: 500%;
+            animation: anime 20s linear infinite;
+        }
+        @keyframes anime{
+            0%,100%{
+                background-position: 0 0;
+            }
+            50%{
+                background-position: 300% 0;
+            }
+        }
+        .header::after{
+            filter: blur(10px);
+        }
+        p{
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%);
+            outline: none;
+            cursor: pointer;
+            /* padding: 0 40%; */
+            height: 40px;
+            width: 300px;
+            text-align: center;
+            border-radius: 0 0 80px 80px;
+            line-height: 2;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            color: #f1f1f196;
+            border: 0;
+            transition: all 0.5s;
+        }
+
+        a{
+            margin: 20px;
+            padding: 20px;
+            color: rgb(95, 95, 95);
+            position: absolute;
+            font-weight: 700;
+            font-family: cursive;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #f1f1f196;
+        }
+
+        a:nth-child(3){
+            left: 130px;
+        }
+
+        a:nth-child(5){
+            top: 50px;
+            left: 130px;
+        }
+        a:nth-child(4){
+            top: 50px;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <p  id="btn">DOWN</p>
+            <a href="#">MENU</a>
+            <a href="#">PRODUCT</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const header = document.querySelector(".header");
+        // var inputBefore = window.getComputedStyle(btn, "").
+
+        btn.addEventListener("click", ()=>{
+            var htop = window.getComputedStyle(header).top;
+            console.log(htop);
+            if(htop == '-140px'){
+                header.style.top = '-10px';
+                btn.textContent = 'UP';
+                btn.style.borderTop = '1px'
+                btn.style.borderTopStyle = 'solid'
+                btn.style.borderTopColor = 'white'
+            }
+            else{
+                header.style.top = '-140px'
+                btn.textContent = 'DOWN';
+                btn.style.borderTop = 'none'
+            }
+        })
+
+    </script>
+
+</body>
+</html>

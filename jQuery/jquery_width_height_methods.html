@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY WIDTH & HEIGHT Methods</title>
+    <style>
+        .container{
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 10px solid black;
+            background-color: gold;
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery width & height Methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>width() :- gives content width</li>
+        <li>height()</li>
+        <li>innerWidth() :- gives width till border start</li>
+        <li>innerHeight()</li>
+        <li>outerWidth() :- gives width till border end</li>
+        <li>outerHeight()</li>
+        <li>outerWidth(true) :- gives width till margin end</li>
+        <li>outerHeight(true)</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur <span>adipisicing elit.</span> Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+        <button id="getwidth">Get Width</button>
+        <button id="setwidth">Set Width</button>
+    </div>
+    <ul id="getwidthdata">
+
+    </ul>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // Get width
+            $('#getwidth').click(getWidth);
+            function getWidth(){
+                var contWidth = $('.container').width();
+                var Width2 = $('.container').innerWidth();
+                var Width3 = $('.container').outerWidth();
+                var Width4 = $('.container').outerWidth(true);
+    
+                $('#getwidthdata').append(`
+                <li>width() = ${contWidth}</li>
+                <li>innerWidth() = ${Width2}</li>
+                <li>outerWidth() = ${Width3}</li>
+                <li>outerWidth(true) = ${Width4}</li>
+                `)
+            }
+
+            // Get width
+            $('#setwidth').click(setWidth);
+            function setWidth(){
+                var contWidth = $('.container').width("500px");
+                var Width2 = $('.container').innerWidth("560px");
+                var Width3 = $('.container').outerWidth("700px");
+                var Width4 = $('.container').outerWidth(true);
+    
+            }
+
+        })
+    </script>
+
+</body>
+</html>

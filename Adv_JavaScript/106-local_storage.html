@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL STORAGE</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+
+    <script>
+
+        // setItem(key, value) {CREATE/UPDATE}
+        window.localStorage.setItem("Name", "Aryan");
+        window.localStorage.setItem("Age", "18");
+
+        // getItem(key)     {READ}
+        document.write(window.localStorage.getItem("Name") + "<br>");
+
+        // key(n)
+        var key = window.localStorage.key(2);
+        document.write(window.localStorage.getItem(key) + "<br>");
+
+        // removeItem(key)    {DELETE}
+        window.localStorage.removeItem("Age"); // remove Age key/Value from local storage
+
+    </script>
+
+</body>
+</html>

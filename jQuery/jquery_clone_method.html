@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY CLONE METHOD</title>
+    <style>
+        .container, .container2{
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery clone Method</h1>
+    <p>Method is:</p>
+    <ul>
+        <li>clone()</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <div class="container2">
+        <h1>Clone Text Box</h1>
+    </div>
+    <button id="clonebtn">Clone</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // clone()
+            $('#clonebtn').click(function(){
+                var clonePara = $('.container p').clone(); //clone of paragraph
+                $('.container2').append(clonePara);
+            })
+
+        })
+    </script>
+
+</body>
+</html>

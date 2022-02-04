@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE</title>
+    <script>
+        
+        function Car(){
+            // instance member
+            this.model = 'Tesla 1';
+            this.price = '2500000 rs';
+        }
+
+        var tesla = new Car();
+
+        // add property or method to class
+        Car.prototype.color = 'White'; // prototype member
+
+        document.write(tesla.color);
+        console.log(tesla);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

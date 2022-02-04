@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCUS EVENT</title>
+</head>
+<body>
+    <h1>Focus Events</h1>
+    Name: <input type="text" id="mytext">
+
+    <script>
+
+        var txt = document.getElementById("mytext");
+
+        function fe(e){
+            txt.style.backgroundColor = "red";
+        }
+        function be(e){
+            txt.style.backgroundColor = "white";
+        }
+        function fie(e){
+            txt.style.backgroundColor = "blue";
+        }
+        function foe(e){
+            txt.style.backgroundColor = "orange";
+        }
+
+        txt.addEventListener("focus", fe, false); // no bubble
+        txt.addEventListener("blur", be, false); // no bubble
+        txt.addEventListener("focusin", fie, false);   // bubble phase
+        txt.addEventListener("focusout", foe, false); // bubble phase
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSMETHOD OVERRIDING</title>
+    <script>
+
+        class Father{
+            show(){
+                return "Father class method";
+            }
+        }
+
+        class Son extends Father{
+            // METHOD OVERRIDING
+            show(){
+                return "Son class method";
+            }
+        }
+
+        var f = new Father();
+        var s = new Son();
+        document.write(f.show() + "<br>");
+        document.write(s.show());
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

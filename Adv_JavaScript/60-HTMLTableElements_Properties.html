@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLTABLEELEMENTS PROPERTIES</title>
+</head>
+<body>
+    <table border="1" id="mytab">
+        <caption>My Table Caption</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11</td>
+                <td>Rahul</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Doe</td>
+                <td>PHP</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>55</td>
+                <td>Soham</td>
+                <td>JSP</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var table = document.getElementById("mytab");
+
+        // PROPERTIES
+
+        // caption
+        var tcap = table.caption;
+        // modify it by innerHTML property
+        tcap.innerHTML = "New Caption By JS";
+        console.log(tcap);
+
+        // tHead
+        var thead = table.tHead;
+        // modify it by innerHTML property
+        thead.innerHTML = "<tr><td>No</td><td>Nav</td><td>Abhyas</td></tr>";
+        console.log(thead);
+
+        // tFoot
+        var tfoot = table.tFoot;
+        // console.log(tfoot.innerHTML)
+        console.log(tfoot);
+
+        // tBodies
+        var tbody = table.tBodies;
+        // we can access multiple tbodies by giving index number to tbody variable
+        // console,log(tbody[0]);
+        console.log(tbody);
+
+
+    </script>
+
+</body>
+</html>

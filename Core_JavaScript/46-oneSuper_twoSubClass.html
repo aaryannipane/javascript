@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE SUPER AND TWO SUB CLASSES</title>
+    <script>
+
+        // SUPER CLASS
+        var Mobile = function (){
+
+        }
+
+        // PROTOTYPE METHOD --> Accessible to samsung class and lenovo class
+        Mobile.prototype.getmodel = function (){
+            return this.model;
+        }
+
+        // SUB CLASS
+        var samsung = function (model, price){
+            this.model = model;
+            this.price = price
+        }
+
+        // SUB CLASS
+        var lenovo = function (model){
+            this.model = model;
+        }
+
+        // INHERITANCE OF Mobile.prototype
+
+        // samsung.prototype = Object.create(Mobile.prototype);
+        // samsung.prototype.constructor = samsung;
+        // lenovo.prototype = Object.create(Mobile.prototype);
+        // lenovo.prototype.constructor = lenovo;
+
+        // FUNCTION FOR INHERITANCE
+        function create(child, parent){
+            return (child.prototype = Object.create(parent.prototype),
+            child.prototype.constructor = child);
+        }
+
+        create(samsung, Mobile);
+        create(lenovo, Mobile);
+
+        // OBJECT
+        var galaxy = new samsung('S9', '90,000 rs');
+        // PROTOTYPE METHOD --> Accessible only for sansung class
+        samsung.prototype.getprice = function (){
+            return this.price;
+        }
+        var ghoda = new lenovo('Ghoda')
+        // ACCESS TO Mobile.prototype METHOD BY GALAXY OBJECT OF SAMSUNG CLASS
+        document.write(galaxy.getmodel() + "<br>");
+        document.write(ghoda.getmodel() + "<br>");
+
+        // ACCESS TO samsung.prototype METHOD ONLY BY samsung object
+        document.write(galaxy.getprice() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

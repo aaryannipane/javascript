@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKIES MAX-AGE</title>
+</head>
+<body>
+    <h1>cookies max-age</h1>
+    <p id="cook">Cookies</p>
+    <p id="expire"></p>
+
+    <script>
+
+        // document.cookie = "username=JhonBaba;max-age="+60*60*24*10;
+        document.cookie = "username=JhonBaba;max-age=5";
+
+        
+        num = 1;
+        var timeID = setInterval(time,1000);
+        function time(){
+            if(num==5){
+                clearInterval(timeID);
+            }
+            document.getElementById('cook').textContent = document.cookie;
+            document.getElementById('expire').textContent = num;
+            num++
+        }
+
+    </script>
+
+</body>
+</html>

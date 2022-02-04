@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANONYMOUS FUNCTION</title>
+    <script>
+
+        // store anonymous function in a variable
+        var a = function(){
+            document.write("Hello World!<br>");
+        };
+        // call
+        a();
+
+        // passing anonymous function as argument
+        function disp(myfunc)
+        {
+            return myfunc();
+        }
+        // call
+        document.write(disp(function(){
+            return "Aryan<br>";
+        }));
+
+        // returning anonymous function
+        function show(a)
+        {
+            return function(b)
+            {
+                return (a+b);
+            };
+        }
+
+        // call
+        var func = (show(10)); // stores first return (anonymous function)
+        document.write(func(20));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

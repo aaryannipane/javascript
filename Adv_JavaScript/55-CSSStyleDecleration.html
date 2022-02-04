@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSStyleDecleration properties and methods</title>
+</head>
+<body>
+    <p id="myp" style="background-color: darkgrey; color: red;">Paragraph</p>
+
+    <script>
+
+        var myp = document.getElementById("myp");
+        var styleObject = myp.style;
+
+        console.log(styleObject);
+
+        // PROPERTIES
+        // cssText
+        console.log(styleObject.cssText); // return inline style of element
+        // styleObject.cssText = "font-size:30px;color: yellowgreen;"; // sets property to element (removes old property)
+
+        // length
+        console.log(`Length of inline css property is ${styleObject.length}`);
+
+        // METHOD
+        // item(index number)
+        console.log(styleObject.item(1)); // color
+        // OR
+        console.log(styleObject[1]); // color
+
+        // getPropertyValue(property_name)
+        console.log(styleObject.getPropertyValue("background-color")); // darkgrey
+
+        // removeProperty(property_name)
+        styleObject.removeProperty("color");
+
+        // setProperty(propertyName, propertyValue, priority)
+        styleObject.setProperty("font-size", "90px", "important");
+
+        // getPropertyPriority(propertyName)
+        console.log(styleObject.getPropertyPriority('font-size'));
+
+    </script>
+
+</body>
+</html>

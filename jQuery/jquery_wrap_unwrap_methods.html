@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY WRAP UNWRAP Methods</title>
+    <style>
+        .container{
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery wrap unwrap Methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>wrap()</li>
+        <li>unwrap()</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button id="wrapbtn">wrap Paragraph</button>
+    <button id="unwrapbtn">unwrap Paragraph</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // wrap()
+            $('#wrapbtn').click(function(){
+                $('.container p').wrap('<h5></h5>')
+            })
+
+            // unwrap()
+            $('#unwrapbtn').click(function(){
+                $('.container p').unwrap();
+            })
+
+        })
+    </script>
+
+</body>
+</html>

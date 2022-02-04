@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open and close method</title>
+</head>
+<body>
+    <h1>Open And Close Method In JS</h1>
+    <button onclick=of()>Open New Window</button>
+    <button onclick=cf()>Close New Window</button>
+
+    <script>
+        var newwindow;
+        function of(){
+            newwindow = window.open("https://www.google.com","_blank","height=400,width=700",true);
+        }
+
+        function cf(){
+            newwindow.close();
+        }
+        
+
+    </script>
+
+</body>
+</html>

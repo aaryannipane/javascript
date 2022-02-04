@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector METHOD</title>
+</head>
+<body>
+    <h1 id="show" class="geek">querySelector method</h1>
+    <p class="geek">hello everybody</p>
+    <div class="myclass">
+        <p id="show1">my name is nothing</p>
+        
+    </div>
+    <p class="myclass">the end</p>
+    <!-- javascript -->
+    <script>
+        // querySelector("CSS Selector")
+
+        // Element Selector
+        var element = document.querySelector("p");
+        document.write(element +"<br>");
+        console.log(element);
+
+        // ID Selector
+        var id = document.querySelector("#show, #show1"); // shows the first get
+        document.write(id +"<br>");
+        console.log(id);
+
+        // Class Selector
+        var cls = document.querySelector(".geek");
+        // var cls = document.querySelector("p.myclass");
+        // var cls = document.querySelector("div > p.show1");
+
+        document.write(cls +"<br>");
+        console.log(cls);
+
+    </script>
+</body>
+</html>

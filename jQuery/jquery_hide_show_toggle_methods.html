@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY HIDE/SHOW TOGGLE METHOD</title>
+    <style>
+        .container{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery hide/show toggle method</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>hide()</li>
+        <li>show()</li>
+        <li>toggle()</li>
+    </ul>
+
+    <hr>
+    <div class="container class1">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="togglebtn">Toggle</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // hide()
+            $('#hidebtn').click(function(){
+                // $('.container').hide();
+                // $('.container').hide("slow");
+                // $('.container').hide("fast");
+                // $('.container').hide(2000);
+                $('.container').hide(2000, function(){
+                    alert("Conttainer is hidden now");
+                });
+            })
+
+            // show()
+            $('#showbtn').click(function(){
+                // $('.container').show();
+                // $('.container').show("slow");
+                // $('.container').show("fast");
+                $('.container').show(1000);
+            })
+
+            // toggle()
+            $('#togglebtn').click(function(){
+                // $('.container').toggle();
+                // $('.container').toggle("slow");
+                // $('.container').toggle("fast");
+                $('.container').toggle(1000);
+            })
+
+        })
+    </script>
+
+</body>
+</html>

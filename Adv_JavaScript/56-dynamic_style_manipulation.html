@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNAMIC STYLE MANIPULATION</title>
+    <style>
+
+        .class1{
+            background-color: red;
+        }
+
+        .class2{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="myp" class="class1">paragraph</p>
+
+    <script>
+
+        var myp = document.getElementById("myp");
+
+        // change class to change style of any element 
+        myp.className = "class2"; // it will overight class defined first (removes class1 class)
+        console.log(myp);
+
+    </script>
+    
+</body>
+</html>

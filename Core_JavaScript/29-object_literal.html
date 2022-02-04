@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT LITERAL</title>
+    <script>
+
+        // declaration of object literal
+        var fees = { };
+
+        // inserting property to object 
+        fees['Rohan'] = 100;  // ----> fees.Rohan = 100
+        fees.Sumit = 500;
+        fees['Mohan'] = 200;
+        // method
+        fees.total = function (){ return (100+200+500);};
+
+        // accessing property of object
+        document.write(fees.Rohan + "<br>");
+        // accessing method of object
+        document.write(fees.total() + "<br>");
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // declaration of object
+        var students = { 
+            student1 : 'aryan',  // properties of object
+            student2 : 'Babu', 
+            greet : function (){  // method of object
+                return ("hello aryan and Babu"); 
+            } 
+        };
+
+        // accessing property from Object
+        document.write(students.student1 + "<br>");
+        // accessing method of object
+        document.write(students.greet() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

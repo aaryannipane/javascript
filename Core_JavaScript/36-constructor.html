@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUCTOR</title>
+    <script>
+
+        //  constructor is like class in python
+        // constructor without parameter
+        function Mobile(){
+            this.model = 'Galaxy'; // this keyword is to represent object eg:- samsung
+            this.price = function (){
+                document.write(this.model+" Price 300rs<br>");
+            };
+        }
+
+        // new Object(instance)
+        var samsung = new Mobile();  // {this.model = 'Galaxy'; this.price = function (){document.write(this.model+" Price 300rs<br>");};}
+        var motorola = new Mobile();
+        // call
+        samsung.price();
+        
+        // ----------------------------------------------------------------------------------------------------------------------------
+
+        // constructor with parameter
+        function Phone(model_no){
+            this.model = model_no;
+            this.price = function (){
+                document.write(this.model+" Price 800rs<br>");
+            };
+        }
+
+        // new Object
+        var oppo = new Phone('Oppo');
+        // call
+        oppo.price();
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

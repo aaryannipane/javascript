@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESSING OBJECT METHOD</title>
+    <script>
+
+        // object
+        var fees = { Rohan : 100, Sumit : 200, Total : function (){ return (100+200); } };
+
+        // accessing object method
+        document.write( fees.Total() + "<br>");
+        document.write( fees["Total"]() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

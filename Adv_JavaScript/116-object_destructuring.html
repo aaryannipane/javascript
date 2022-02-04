@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT DESTRUCTURING</title>
+</head>
+<body>
+    <h1>Object Destructuring</h1>
+
+    <script>
+
+        var course = {
+            CourseName:'JavaScript',
+            Duration:"3M",
+            Tutor:"Geek"
+        }
+
+        // object destructuring
+        var {CourseName, Duration, Tutor} = course;
+
+        console.log(CourseName);
+        console.log(Duration);
+        console.log(Tutor);
+
+        // object destructuring two
+        var {CourseName:cname,Duration:time, Tutor:teacher} = course;
+
+        console.log(`${cname} in ${time} with ${teacher}`);
+
+        // object destructuring three
+        var {CourseName,Tutor}  = course;
+        console.log(Tutor);
+
+        // object destructuring four
+        var a,b;
+        ({a,b} = {a:10,b:20});
+        document.write(`Sum is ${a+b}`);
+
+        // default value
+        var {a, b=20} = {a:10};
+
+        
+
+    </script>
+
+</body>
+</html>

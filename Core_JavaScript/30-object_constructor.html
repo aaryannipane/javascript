@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT CONSTRUCTOR</title>
+    <script>
+
+        // declaration of object
+        var fees = new Object();
+
+        // inserting properties to object
+        fees.Rohan = 100;
+        fees.Sumit = 200;
+        // inserting method
+        fees.Total = function (){ return (100 + 200); };
+
+        // access to property
+        document.write(fees.Rohan + "<br>");
+
+        // access to method
+        document.write(fees.Total() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

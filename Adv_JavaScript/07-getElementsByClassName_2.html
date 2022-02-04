@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName more specific</title>
+    <style>
+        #first{
+            background-color: skyblue;
+        }
+        #second{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <p class="geek">paragraph inside first div</p>
+    </div>
+    <div id="second">
+        <p class="geek">paragraph inside second div</p>
+    </div>
+</body>
+<!-- javascript -->
+<script>
+
+    var getFirst = document.getElementById("first");
+    var result = getFirst.getElementsByClassName("geek");
+
+    document.write(result);
+    console.log(result);
+
+</script>
+</html>

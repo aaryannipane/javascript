@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCEPTION HANDLING</title>
+</head>
+<body>
+    <h1>Exception handling</h1>
+
+    <script>
+
+        try{
+            add(); // error for this function
+            document.write("Code Skipped <br>");
+        }
+        catch(e){
+            document.write("Message: "+e.message + "<br>");
+            document.write("Name: "+e.name + "<br>");
+            document.write("Stack: "+e.stack + "<br>");
+
+            // ---------------------------------
+            document.write("-------------------------------Function Define nahi hai-------------------<br>");
+        }
+        finally{
+            document.write("it will run wheather there is exception or not <br>")
+        }
+
+        document.write("<br><br>");
+
+        function areaRect(w, h){
+            if(isNaN(w) || isNaN(h)){
+                throw "Parameter is not a number!"
+            }
+            else{
+                document.write(`Area of rectangle is ${w*h}`);
+            }
+        }
+
+        try{
+            areaRect("A",6);
+        }
+        catch(e){
+            document.write(e);
+        }
+
+    </script>
+
+</body>
+</html>

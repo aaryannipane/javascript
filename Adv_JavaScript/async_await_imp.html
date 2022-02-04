@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC AWAIT</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Async and Await</h1>
+    <iframe width="1349" height="480" src="https://www.youtube.com/embed/AyJq1RRaY_k?list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    <script>
+        // if having any problem to understand watch this video :- https://www.youtube.com/watch?v=AyJq1RRaY_k&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=43
+
+
+        // async returns promise
+        async function func(){
+            console.log("inside func function");
+            const response = await fetch('https://api.github.com/users')
+            console.log("Before Response");
+            const users = await response.json();
+            console.log("users resolved");
+            return users;
+            // return 'World is beutifull';
+        }
+
+        console.log("Before calling func function");
+        var a = func()
+        console.log("After calling func function");
+
+        console.log(a)
+        a.then((data)=>console.log(data))
+        console.log("Last line of this script")
+    </script>
+
+</body>
+</html>

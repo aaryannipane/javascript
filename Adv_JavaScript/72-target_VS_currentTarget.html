@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENT FLOW</title>
+    <style>
+        #one{
+            height:500px;
+            width: 500px;
+            background: lightblue;
+        }
+        #two{
+            width: 400px;
+            height: 400px;
+            background: lightcoral;
+        }
+        #three{
+            width: 300px;
+            height: 300px;
+            background: lightcyan;
+        }
+        #four{
+            width: 200px;
+            height: 200px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="one" data-name="1">1
+        <div id="two" data-name="2">2
+            <div id="three" data-name="3">3
+                <div id="four" data-name="4">4</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var one = document.getElementById("one");
+        var two = document.getElementById("two");
+        var three = document.getElementById("three");
+        var four = document.getElementById("four");
+
+        // Bubbling Phase:- calls event from child to parent optional parameter is false
+        one.addEventListener("click", (e)=>{console.log("one");console.log("Target = " + e.target.dataset.name);console.log("CurrentTarget = " + e.currentTarget.dataset.name)}, false);
+        two.addEventListener("click", (e)=>{console.log("two");console.log("Target = " + e.target.dataset.name);console.log("CurrentTarget = " + e.currentTarget.dataset.name)}, false);
+        three.addEventListener("click", (e)=>{console.log("three");console.log("Target = " + e.target.dataset.name);console.log("CurrentTarget = " + e.currentTarget.dataset.name)}, false);
+        four.addEventListener("click", (e)=>{console.log("four");console.log("Target = " + e.target.dataset.name);console.log("CurrentTarget = " + e.currentTarget.dataset.name)}, false);
+
+
+        // Capture Phase :- calls event from parent to child optional parameter is true
+        // one.addEventListener("click", ()=>{console.log("one")}, true);
+        // two.addEventListener("click", ()=>{console.log("two")}, true);
+        // three.addEventListener("click", ()=>{console.log("three")}, true);
+        // four.addEventListener("click", ()=>{console.log("four")}, true);
+
+
+    </script>
+
+</body>
+</html>

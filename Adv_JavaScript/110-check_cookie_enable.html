@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECK BROWSER COOKIE ENABLED OR DISABLED</title>
+</head>
+<body>
+    <h1>Check cookie Enabled or Disabled</h1>
+    <script>
+        // get info of user browser, OS, etc
+        console.log(navigator.userAgent);
+
+        // check cookie
+        if(navigator.cookieEnabled){
+            document.write("Cooke is enabled");
+        }
+        else{
+            document.log("cookie is disabled");
+        }
+    </script>
+</body>
+</html>

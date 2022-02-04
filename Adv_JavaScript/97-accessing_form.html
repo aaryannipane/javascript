@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESSING FORM</title>
+</head>
+<body>
+    <form action="" name="myform" id="meraform">
+        <input type="text" placeholder="First Name"><br><br>
+        <input type="text" placeholder="Last Name"> 
+    </form>
+
+    <script>
+
+        // FIRST
+        var method1 = document.forms[0];
+        console.log(method1);
+
+        // SECOND
+        var method2 = document.forms['myform'];
+        console.log(method2);
+
+        // THIRD
+        var method3 = document.myform;
+        console.log(method3);
+
+        // FOURT
+        var method4 = document.getElementById('meraform');
+        console.log(method4);
+
+    </script>
+
+</body>
+</html>

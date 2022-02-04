@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH API</title>
+</head>
+<body style="background-color: darkslategrey;">
+    <h2 style="text-align: center; margin: 30px 0 0 0;">F E T C H &nbsp;&nbsp;A P I</h2>
+
+    <script>
+
+    // WATCH :- https://youtu.be/a8tsXX6nvw4?t=67
+    /* FETCH API :- The fetch Api provides an interface for fetching resources(including aross the networks).
+                    It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides the more powerful and flexible feature set */
+
+    // fetch() method :- The fetch method of the WindowOrWorkerGlobalScope mixin start the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. The promise resolves to the Response object representing the response to your request.
+    // It returns a Promise that resolves to a Response object.
+    /*SYNTAX :- fetch(resource, init)
+      resource :- This defines the resource that you wish to fetch. It can be URL Object, Request Object and URL of resource.
+      init(optional) :- (watch ajax tut of geekyshows to understand this requests)
+                    method :- The request method e.g., GET, POST.
+                    headers :- Any headers you want to add to your request, contained within a Headers object or an Object literal with ByteString values.
+                    body :- Any body that you want to add to your request: This can be a Blob, BufferSource, FormData, URLSearchParms, USVString, or ReadableStream object . NOTE that a request using the GET or HEAD method cannot have body.
+                    mode :- The mode you want to use for the request, e.g., cors, no-cors, or same-origin
+                    credentials :- The request credentials you want to use for the request: omit, same-origin, or include.To automatically send cookies for the current domain, this option must be provided. starting with Chrome 50, this property also takes a FederatedCredential instance or a PasswordCredential instance.
+                    cache :- The cache mode you want to use for the request.
+                EXAMPLE:- 
+                fetch('https://www.geekyshows.com/post', {
+                    method:'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type':'application/json'
+                    }
+                    body:body,
+                    cache:'default'
+                })*/
+
+    </script>
+
+</body>
+</html>

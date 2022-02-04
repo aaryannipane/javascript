@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLONE NODE METHOD</title>
+    <style>
+        body{
+            display: flex;
+        }
+        h1{
+            height: 50px;
+            background-color: yellowgreen;
+            border: 1px solid black;
+        }
+
+        div{
+            width: 50vw;
+            background-color: aquamarine;
+        }
+        #cloneDiv{
+            background: lightcoral;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>original box</p>
+        <h1 id="orignal">Hello i am OG</h1>
+    </div>
+    <div id="cloneDiv">
+        <p>clone box</p>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // access to orignal element
+        var ogNode = document.getElementById("orignal");
+
+        // access to append parent div
+        var cloneDiv = document.getElementById("cloneDiv");
+
+        // with true
+        var cloneNode1 = ogNode.cloneNode(true);
+        cloneDiv.appendChild(cloneNode1)
+
+        // clone of orignal element with false argument
+        var cloneNode2 = ogNode.cloneNode(false) // clone only element with attributes but no with text or anything inside element
+
+        // append clone
+        cloneDiv.appendChild(cloneNode2);
+
+
+    </script>
+
+</body>
+</html>

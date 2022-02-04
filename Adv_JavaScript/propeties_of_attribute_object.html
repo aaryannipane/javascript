@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROPERTIES OF ATTRIBUTE OBJECT</title>
+</head>
+<body>
+    
+    <h1 id="myid" class="myclass">WELCOME TO JAVASCRIPT</h1>
+
+    <!-- JavaScript -->
+    <script>
+
+        // attribute properties - name, value
+
+        // name
+        var access = document.getElementById("myid");
+        var getAttrName = access.attributes[0].name;
+        document.write(getAttrName + " = ");
+
+        // value
+        var getAttrValue = access.attributes[0].value;
+        document.write(getAttrValue + "<hr>");
+
+
+        // ---------------------change attribute value---------------------
+
+        var chngVal = access.attributes[1].value = "geek";
+        document.write(chngVal);
+
+    </script>
+
+</body>
+</html>

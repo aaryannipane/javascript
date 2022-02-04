@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Website Links</title>
+</head>
+<body>
+    <a href="https://www.google.com">Google</a>
+    <a href="https://www.facebook.com">facebook</a>
+    <a href="https://www.youtube.com">youtube</a>
+
+    <script>
+        var linkS = document.links;
+        console.log(linkS);
+
+        var anchors = Array.from(linkS);
+        console.log(anchors);
+        var str = "google";
+        anchors.forEach((element)=> {
+            var href = element.href
+            if(href.includes(str)){
+                console.log(href);
+            }})
+
+
+    </script>
+
+</body>
+</html>

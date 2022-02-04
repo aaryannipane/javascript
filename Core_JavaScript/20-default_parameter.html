@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFAULT PARAMETER</title>
+    <script>
+
+        // default parameter
+        function add(a, b, c=10)
+        {
+            document.write("<h1>Default Parameter</h1>")
+            document.write(a+"<br>"+b+"<br>"+c);
+        }
+
+        add(20,30); // 20 30 10
+
+        // null parameter
+        function num(a, b, c=null)
+        {
+            document.write("<h1>null Parameter</h1>")
+            document.write(a+"<br>"+b+"<br>"+c);
+        }
+        num(45,65);
+
+        // array parameter
+        function array(a, b, c=[101])
+        {
+            document.write("<h1>Default Parameter</h1>")
+            document.write(a+"<br>"+b+"<br>"+c[0]);
+        }
+        array(83,32);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

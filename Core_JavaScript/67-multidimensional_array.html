@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIDIMENSIONAL ARRAY</title>
+    <script>
+
+        // empty multidimensional array
+        var info = [
+            [], 
+            [], 
+            []
+            ];
+        // insert values
+        // info[row][column]
+        info[0][0] = "Aryan";
+        info[0][1] = "Nipane";
+        info[1][0] = "Babu";
+        info[1][1] = "Kalya";
+        info[2][0] = "Ravan";
+        info[2][1] = "Uthale";
+        // display
+        document.write(info + "<br><hr>");
+
+        // multidimensional array
+        var data = [
+            ["Aryan", 17],
+            ["Babu", 20],
+            ["Ravan", 0]
+        ];
+
+        // access to multidimensional array
+        for(let i=0; i<3; i++) // for row
+        {
+            for(let j=0; j<2; j++) // for column
+            {
+                document.write(data[i][j] + " ");
+            }
+            document.write("<br>");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

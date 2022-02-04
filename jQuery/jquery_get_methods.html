@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY GET METHODS</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+        #container{
+            padding: 20px;
+            background-color: orange;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Get Methods</h1>
+    <p>Get Methods are:</p>
+    <ul>
+        <li>text()</li>
+        <li>html()</li>
+        <li>attr()</li>
+        <li>val() - used for forms</li>
+    </ul>
+
+    <hr>
+    <div id="container" class="abc xyz">
+        <h1>Text <span>Box</span></h1>
+        <select id="country">
+            <option value="india">India</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="sri-lanka">Sri Lanka</option>
+        </select>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, qui nemo consequatur molestias inventore aspernatur totam, illo, ipsa atque assumenda praesentium ab iure alias quasi maxime minus. Libero beatae, quaerat minus deleniti, magni nam ab natus dolorem, qui id fuga. Iure explicabo ut facilis assumenda vero ea aperiam a fugiat incidunt quos, cum dolor et hic ipsam provident quia quidem praesentium nemo dicta consequatur? Iusto aspernatur quo similique doloremque dolorum praesentium amet atque officia, tempore sit tempora nemo repellat eveniet optio obcaecati quod fuga. Similique veniam quasi, at temporibus voluptatum porro velit earum, voluptatem rem placeat odit fuga quisquam necessitatibus?</p>
+    </div>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // html() method
+            var a = $('#container h1').html(); // with tags too
+            console.log(a);
+
+            // text() method
+            var a = $('#container h1').text(); // only plain text 
+            console.log(a);
+
+            // attr() method
+            var a = $('#container').attr('class');  
+            console.log(a);
+
+            // val() method
+            var a = $('#country').val();  
+            console.log(a);
+
+        })
+    </script>
+
+</body>
+</html>

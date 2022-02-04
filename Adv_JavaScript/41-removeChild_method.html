@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMOVE CHILD METHOD</title>
+</head>
+<body>
+    <div id="parentNode">
+        <p id="removeNode">I am Gonna Removed</p>
+        <p>I will not remove</p>
+    </div>
+
+    <!-- JAVSCRIPT -->
+    <script>
+
+        // access to parent
+        var parentNode = document.getElementById("parentNode");
+
+        // access to remove element
+        var removeNode = document.getElementById("removeNode");
+
+        // rempveChild
+        var removedNode = parentNode.removeChild(removeNode);
+
+    </script>
+
+
+</body>
+</html>

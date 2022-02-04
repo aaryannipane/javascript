@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYLE PROPERTY</title>
+</head>
+<body>
+    <p id="myp" style="background-color: black; color: aliceblue;">pargraph</p>
+
+    <script>
+
+        var myp = document.getElementById("myp");
+
+        // style property is use to access inline style  and returns CSSStyleDecleration which has collection of properties value 
+        console.log(myp.style);
+
+        // element.style.property
+        myp.style.backgroundColor = "grey";
+
+        // set multiple styles in a single statement (delete pre styles )
+        // myp.style.cssText = "font-size: 20px; border: 2px solid yellow;background-color: grey;";
+
+    </script>
+
+
+</body>
+</html>

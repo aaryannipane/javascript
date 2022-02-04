@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName with loop</title>
+</head>
+<body>
+    <h1 class="geek">length property</h1>
+    <p class="geek">hello bachoo</p>
+    <input type="text" class="geek">
+    <div id="first">
+        <p class="geek">paragraph inside first div</p>
+    </div>
+    <div id="second">
+        <p class="geek">paragraph inside second div</p>
+    </div>
+</body>
+<!-- javascript -->
+<script>
+    
+    var data = document.getElementsByClassName("geek");
+    var len = data.length;
+
+    // loop
+    for(let i=0; i<len; i++)
+    {
+        document.write(data[i] + "<br>");
+        console.log(data[i]);
+    }
+
+</script>
+</html>

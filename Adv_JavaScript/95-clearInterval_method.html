@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEARINTERVAL METHOD</title>
+</head>
+<body>
+    <h1>clearInterval Method</h1>
+    <h1 id="update"> </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        var num = 00;
+        function Update(){
+            if(num==60){
+                num = 0;
+                document.getElementById('update').textContent = 00;
+            }
+            if(num<60){
+                document.getElementById('update').textContent = num;
+                num++
+            }
+        }  
+        var timeoutID,clicknum;
+        timeoutID = setInterval(Update, 100);
+        clicknum = 0;
+        function startF(){
+            if(clicknum==0){
+                clearInterval(timeoutID)
+                timeoutID = setInterval(Update, 100);
+                clicknum = 1;
+            }
+        }
+
+        // var timeoutID = setInterval(Update, 100);
+
+        
+        function sf(){
+            if(clicknum==1){
+                clearInterval(timeoutID);
+                clicknum = 0;
+            }
+            clearInterval(timeoutID);
+        }
+        document.getElementById('start').addEventListener('click', startF);
+        document.getElementById('stop').addEventListener('click', sf);
+
+    </script>
+
+</body>
+</html>

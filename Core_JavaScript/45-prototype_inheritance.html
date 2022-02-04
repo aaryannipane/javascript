@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE INHERITANCE</title>
+    <script>
+
+        // SUPER CLASS
+        var Mobile = function (){
+            this.a = 10;
+        }
+
+        // ADD PROPERTY TO MOBILE.PROTOTYPE
+        Mobile.prototype.z = 30;
+
+        // MOBILE CLASS OBJECT
+        var m = new Mobile();
+
+        // ACCESS TO MOBILE CLASS FROM m (Object)
+        console.log(m.a);
+
+        // SUB CLASS
+        var Samsung = function (){
+
+            // SUPER CLASS INHERITANCE
+            Mobile.call(this);
+
+            this.b = 20;
+        }
+        
+        // MOBILE.PROTOTYPE INHERITANCE TO SAMSUNG CLASS
+        Samsung.prototype = Object.create(Mobile.prototype);
+        
+        // CONSTRUCTOR RESET
+        Samsung.prototype.constructor = Samsung;
+
+        // SAMSUNG CLASS OBJECT
+        var s = new Samsung();
+
+        // ACCESS TO MOBILE CLASS(OBJECT) FROM s (OBJECT OF SAMSUNG CLASS)
+        console.log(s.a);
+
+        // ACCESS TO MOBILE PROTOTYPE FROM s (OBJECT OF SAMSUNG CLASS)
+        console.log(s.z);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

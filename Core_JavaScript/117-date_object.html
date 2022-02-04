@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATE OBJECT IN JAVASCRIPT</title>
+    <script>
+
+        // new Date()
+        var tarikh1 = new Date();
+        document.write(tarikh1 + "<br>");
+
+        document.write("<hr>");
+
+        // new Date(milliseconds)
+        var tarikh2 = new Date(8640000);
+        document.write(tarikh2 + "<br>");
+
+        document.write("<hr>");
+
+        // new Date(year, month, day, hour, minute, second, milliseconds)
+        // 0 - sunday, 1 - monday and so on
+        // 0 - january, 1 - february and so on
+        var tarikh3 = new Date(2018, 4, 25, 9, 45, 35, 0);
+        document.write(tarikh3 + "<br>");
+
+        // omitted 
+        var tarikh4 = new Date(2018, 4);
+        document.write(tarikh4 + "<br>");
+
+        document.write("<hr>");
+
+        // new Date(datestring)
+        var tarikh5 = new Date("May 12, 2018 10:16:05");
+        document.write(tarikh5 + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METHOD OVERRIDING</title>
+    <script>
+
+        // inhertance function
+        function inherit(child, parent){
+            child.prototype = Object.create(parent.prototype);
+            child.prototype.constructor = child;
+        }
+
+        // parent class
+        var Mobile = function (){
+
+        }
+
+        //parent prototype method 
+        Mobile.prototype.show = function (){
+            return ('Super class method');
+        }
+
+        // child class
+        var Samsung = function (){
+            
+        }
+
+        // inherit prototype 
+        inherit(Samsung, Mobile);
+
+        // object of samsung class
+        var galaxy = new Samsung();
+
+        // BEFORE OVERRIDING
+        document.write(galaxy.show() + "<br>");
+
+        Samsung.prototype.show = function (){
+            return ("Child class method");
+        }
+
+        // AFTER OVERRIDING
+        document.write(galaxy.show() + "<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

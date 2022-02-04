@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNSTRINGDATA METHOD</title>
+</head>
+<body>
+    <h2 id="myh2">Hello User</h2>
+
+    <script>
+
+        var myh2 = document.getElementById("myh2");
+        var text = myh2.firstChild;
+
+        // substringData(start index, length of char to delete);
+        var result = text.substringData(0, 3) // Hel
+        console.log(result);
+
+    </script>
+
+</body>
+</html>

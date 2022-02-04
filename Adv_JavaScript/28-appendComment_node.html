@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPEND COMMENT NODE</title>
+    <style>
+
+        #mydiv{
+            background: lightcoral;
+            height: 300px;
+        }
+        #mysec{
+            background: lightgreen;
+            height: 300px;
+        }
+        h2{
+            height: 50px;
+            border: 2px solid purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <h1 id="myh1">Append Text Node</h1>
+    </div>
+
+    <section id="mysec">
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var mysec = document.getElementById("mysec");
+
+        // append new comment node
+        mysec.appendChild(document.createComment("Hello i am comment inserted by javascript"));
+        
+        
+
+
+    </script>
+
+</body>
+</html>

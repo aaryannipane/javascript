@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT BINDING WITH JAVASCRIPT</title>
+</head>
+<body>
+    <button id="mybtn1">Unamed Function</button>
+    <button id="mybtn2">Named Function</button>
+
+    <script>
+
+        var mybtn = document.getElementById("mybtn1");
+
+        // event binding unamed function
+        mybtn.onclick = function (){alert('Unamed Function');};
+
+        // event binding named function
+        function disp(){
+            alert('Named Function');
+        }
+
+        // direct access and event binding to element
+        document.getElementById("mybtn2").onclick = disp; //NOTE --> not to use parenthesis after function name
+
+    </script>
+
+</body>
+</html>

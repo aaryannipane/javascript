@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOW PROTOTYPE WORKS</title>
+    <script>
+
+        function Mobile(){
+            this.a = 10;
+        }
+
+        Mobile.prototype.b = 20;
+
+        var lg = new Mobile();
+
+        console.log(lg.b); // it will go to lg Object if not present then it go to prototype Object if present then value if not then undefined
+
+    </script>
+</head>
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/HzK69hfrD54" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

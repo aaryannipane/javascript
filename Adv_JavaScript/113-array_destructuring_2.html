@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_destructuring 2</title>
+</head>
+<body>
+    <h1>Array passing to Function</h1>
+
+
+    <script>
+
+        var a = [10, 20, 30];
+
+        function show([value1, value2, value3]){
+            console.log(value1); // 10
+            console.log(value2); // 20
+            console.log(value3); // 30
+        }
+
+        show(a);
+
+    </script>
+
+</body>
+</html>

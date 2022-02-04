@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTI LEVEL INHERITANCE</title>
+    <script>
+
+        // PARENT CLASS
+        var Mobile = function (){
+            this.a = 10;
+        }
+
+        // PROTOTYPE PROPERTY OF MOBILE
+        Mobile.prototype.z = 30;
+
+        // CHILD CLASS
+        var Samsung = function (){
+            // It calls super class constructor and initialize property without this you can not access super class property using child(sub) class object
+            Mobile.call(this);
+            this.b = 20;
+        }
+
+        // CHILD CLASS
+        var Galaxy = function (){
+            Samsung.call(this);
+            this.c = 100;
+        }
+
+        // PROTOTYPE INHERITANCE 
+        Samsung.prototype = Object.create(Mobile.prototype);
+        Samsung.prototype.constructor = Samsung;
+
+        Galaxy.prototype = Object.create(Samsung.prototype);
+        Galaxy.prototype.constructor = Galaxy;
+
+        // OBJECTS
+
+        var m = new Mobile();
+        var s = new Samsung();
+        var g = new Galaxy();
+
+
+        // ACCESS THROUGH GALAXY OBJECT
+        document.write("<h2>Galaxy object can access</h2>");
+        document.write("Mobile A: " + g.a + "<br>");
+        document.write("Samsung B: " + g.b + "<br>");
+        document.write("Mobile Prototype: " + g.z + "<br>");
+        document.write("Galaxy C: " + g.c + "<br>");
+
+        // ACCESS THROUGH SAMSUNG OBJECT
+        document.write("<h2>Samsung object can access</h2>");
+        document.write("Mobile A: " + s.a + "<br>");
+        document.write("Samsung B: " + s.b + "<br>");
+        document.write("Mobile Prototype: " + s.z + "<br>");
+        document.write("Galaxy C: " + s.c + "<br>");
+
+        // ACCESS THROUGH MOBILE OBJECT
+        document.write("<h2>Mobile object can access</h2>");
+        document.write("Mobile A: " + m.a + "<br>");
+        document.write("Samsung B: " + m.b + "<br>");
+        document.write("Mobile Prototype: " + m.z + "<br>");
+        document.write("Galaxy C: " + m.c + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

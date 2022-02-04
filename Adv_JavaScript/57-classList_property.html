@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNAMIC STYLE MANIPULATION</title>
+    <style>
+
+        .class1{
+            background-color: red;
+        }
+
+        .class2{
+            background-color: green;
+        }
+
+        .border{
+            border: 10px solid yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="myp" class="class2 dummyClass">paragraph</p>
+
+    <script>
+
+        var myp = document.getElementById("myp");
+
+        // classList returns tokenList (collection of class names)
+        var elementClass = myp.classList;
+        console.log(elementClass);
+
+        // Get any specified class by index
+        console.log(elementClass[0]);
+
+        // CLASSLIST.PROPERTIES
+        console.log("-------------------PROPERTIES----------------");
+        // length property
+        console.log(`Length of classList is ${elementClass.length}`);
+
+        // value property
+        console.log(`Value of classList is :- ${elementClass.value}`);
+
+        // CLASSLIST.METHODS()
+        console.log("--------------------METHODS--------------------");
+        // item()
+        console.log(`Item in classList at 0 index is :- ${elementClass.item(0)}`);
+
+        // add()
+        elementClass.add("border");
+        console.log(`New class added "border" with add() method`);
+
+        // remove()
+        elementClass.remove("dummyClass");
+        console.log(`removed dummyClass with remove() method`);
+
+        // replace()
+        elementClass.replace("class2", "class1") // class2 is replaced with class1
+        console.log("class2 is replaced with class1 with replace() method");
+
+        // contains()
+        var result = elementClass.contains("class2") //false
+        console.log(`Do classList contains("class2") :- ${result}`);
+
+        // toggle()
+        elementClass.toggle("border"); // removes class
+        elementClass.toggle("border") // adds class (comment this line to see effect)
+        console.log(`border toggle border class`);
+
+
+        console.log(elementClass)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALLBACK FUNCTION</title>
+</head>
+<body>
+    <h1>Callback Function</h1>
+
+    <script>
+
+        // synchronus callback function
+        function show(a){
+            console.log("Hello" + a);
+        }
+
+        function geek(a,callback){
+            callback(a);
+        }
+
+        geek(101, show);
+
+        console.log("First End");
+
+        // Asynchronous callback function
+        setTimeout(()=>console.log("hello"), 5000);
+
+        console.log("Second End");
+
+    </script>
+
+</body>
+</html>

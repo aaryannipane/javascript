@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>removeEventListener Method</title>
+</head>
+<body>
+    <button id="mybtn">Click Me</button>
+
+    <script>
+        var btn = document.getElementById("mybtn");
+        
+        function disp1(){alert("Function 1");};
+        function disp2(){alert("Function 2");};
+
+        btn.addEventListener('click', disp1, false);
+        btn.addEventListener('click', disp2, true);
+
+        // removeEventListener(sam argument given when the event was added)
+        btn.removeEventListener("click", disp2, true);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY ON OF METHODS</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            width: 300px;
+            height: 200px;
+            margin: 10px auto;
+        }
+        .cls{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery on of methods</h1>
+    <p>methods are:</p>
+    <ul>
+        <li>on()</li>
+        <li>off()</li>
+    </ul>
+
+    <hr>
+
+    <div class="container">
+        <p></p>
+    </div>
+    <button id="btn" style="display:block;margin: auto;">Remove Events</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // on() first way to use it
+            $('.container').on('mouseover mouseout', function(){
+                $(this).toggleClass('cls')
+            })
+
+            // on() second way to use it
+            $('.container').on({
+                'click': function(){
+                    $('.container p').text('Why did you click me');
+                },
+                'mousemove':function(){
+                    $(this).css({'border':'10px solid black', 'border-radius':'50px'})
+                }
+            })
+
+            // off() it is use to remove event
+            $('#btn').click(function(){
+                $('.container').off('mousemove mouseover mouseout')
+            })
+
+        })
+    </script>
+
+</body>
+</html>

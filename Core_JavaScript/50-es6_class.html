@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 CLASS</title>
+    <script>
+ 
+        // Old Constructor
+        var Car = function (){
+            this.model = 'BMW';
+            this.show = function (){
+                return "Constructor method";
+            }
+        }
+
+        var bmw = new Car();
+
+        // NEW CLASS
+        class Mobile{
+            constructor(){  // we can put arguments in rounded brackets same as function
+                // instance member
+                this.model = 'Galaxy';
+                this.show = function (){
+                    return "Instance member <br>";
+                }
+            }
+
+            // prototype member
+            display(){ return "Prototype member"; } // method
+        }
+
+        var samsung = new Mobile();
+
+        // ACCESS TO CLASS MEMBERS
+        document.write(samsung.model + "<br>");
+        // ACCESS TO INSTANCE METHOD
+        document.write(samsung.show());
+        // ACCESS TO PROTOTYPE METHOD 
+        document.write(samsung.display());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

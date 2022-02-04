@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR IN LOOP</title>
+    <script>
+
+        function Mobile(){
+            this.model = 'Samsung J7';
+            this.ram = '8gb';
+            this.momory = '128gb';
+            this.price = '27,000rs';
+            this.info = function (){
+                document.write(this.price)
+            }
+        }
+
+        var samsung = new Mobile();
+
+        // for in loop
+        document.write("<h2>Key : Value with function value</h2>")
+        for(var specs in samsung)
+        {   // specs = property(key) of object , samsung[specs] = value of that property
+            document.write(specs + ' : ' + samsung[specs] + '<br>');
+        }
+
+        // not to show function value
+        document.write("<h2>Key : Value without function value</h2>")
+        for(let key in samsung)
+        {
+            if(typeof samsung[key] !== 'function')
+            {
+                document.write(key + " : " + samsung[key] + "<br>");
+            }
+            else{
+                document.write("This was a function " + key + '<br>');
+            }
+        }
+
+        // to only see property(key) of object
+        document.write("<h2>To only show properties of object</h2>");
+        document.write( Object.keys(samsung) + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

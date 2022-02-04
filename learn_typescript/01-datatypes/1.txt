@@ -1,0 +1,14 @@
+TypeScript means javascript + datatypes
+
+in js we don't need to specify type of variable beacause it is dynamic type language
+
+but in ts we can specify type of variables
+
+primitive - boolean, number, string etc
+non-primitive - modules, classes and interfaces
+
+syntax :- 
+var <variable name>: <data Type> = <value>;
+example :-
+let isBlack: boolean = false;
+let count: number = 10;

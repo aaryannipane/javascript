@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY OBJECT</title>
+</head>
+<body>
+    <h1>History Object</h1>
+    <button id="back">Back</button>
+    <button id="forward">Forward</button>
+    <button id="go">GO to</button>
+
+
+    <script>
+
+        // PROPERTY
+        document.write("<br>Length of history:- "+ window.history.length);
+
+        // METHODS
+        
+        function bf(){
+            window.history.back();
+        }
+
+        function ff(){
+            window.history.forward();
+        }
+
+        function gf(){
+            window.history.go(-1);
+        }
+
+        document.getElementById('back').addEventListener('click', bf);
+        document.getElementById('forward').addEventListener('click', ff);
+        document.getElementById('go').addEventListener('click', gf);
+
+    </script>
+
+</body>
+</html>

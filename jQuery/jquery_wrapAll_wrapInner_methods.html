@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY  WRAPALL WRAPINNER Methods</title>
+    <style>
+        .container{
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+        }
+        .bg{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery wrapAll wrapInner Methods</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>wrapAll()</li>
+        <li>wrapInner()</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos,.</p>
+        <p>Lorem ipsum dolor sit amet consectetur Fugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos,.</p>
+    </div>
+    <button id="wrapallbtn">wrapAll</button>
+    <button id="wrapinnerbtn">wrapInner</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            // wrapAll()
+            $('#wrapallbtn').click(function(){
+                $('.container p').wrapAll('<h5 class="bg"></h5>');
+            })
+
+            // wrapInner()
+            $('#wrapinnerbtn').click(function(){
+                $('.container h1').wrapInner('<i></i>');
+            })
+
+        })
+    </script>
+
+</body>
+</html>

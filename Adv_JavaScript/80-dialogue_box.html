@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIALOGUE BOX</title>
+</head>
+<body>
+    <h1>Dialogue Box</h1>
+    <button onclick="alert('You Have Clicked Wrong Button')">Alert Box</button>
+    <button onclick=cf()>confirm Box</button>
+    <button onclick=pf()>prompt Box</button>
+
+    <script>
+
+        function cf(){
+            crn = window.confirm('Are You Sure you want to delete data?');
+            if(crn){
+                document.write("Data Deleted");
+            }
+        }
+        function pf(){
+            var age = window.prompt('Confirm Your Age', 'Age');
+            if(age >= 18){
+                document.write("Welcome to Above 18's Club");
+            }
+            else{
+                document.write("Grow Up Kid");
+            }
+        }
+
+    </script>
+</body>
+</html>

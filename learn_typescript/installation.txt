@@ -1,0 +1,8 @@
+install nodejs 
+
+then using npm install typescript globally
+npm -g install typescript 
+
+then create file with extension .ts
+and run it using below command
+tsc file.ts 

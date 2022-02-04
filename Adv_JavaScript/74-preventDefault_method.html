@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preventDefault Method</title>
+</head>
+<body>
+    <div id="mydiv" style="width: 200px;height: 200px;background-color: blanchedalmond;">
+        <a href="https://www.google.com" id="mylink">Click to Open GOOGLE</a>
+    </div>
+
+    <script>
+
+        function preventLink(e){
+            e.preventDefault();
+            // it does not stop propagation it will do propagation
+        }
+
+        var link = document.getElementById("mylink");
+        link.addEventListener('click', preventLink, false);
+
+    </script>
+
+</body>
+</html>

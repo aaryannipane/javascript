@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMAT DATE</title>
+    <script>
+
+        // day ---> (1-31)
+        // week day ---> (0 - 6) ex:- 0 - Sunday
+        // month ---> (0-11) ex:- 0 - January
+        // hour ---> (0-23) 
+
+        // new Date()
+        var tarikh = new Date();
+        // format function we made it
+        document.write(formatDate(tarikh));
+
+        function formatDate(fd)
+        {
+            var date = fd.getDate();
+            var month = fd.getMonth();
+            month++;
+            var year = fd.getFullYear();
+
+            return (date + " - " + month + " - " + year);
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parentNode & parentElement</title>
+</head>
+<body>
+    <h1 id="head">Hello user</h1>
+
+    <!-- JavaScript -->
+    <script>
+
+        // parentNode
+        var access = document.getElementById("html");
+        console.log(access.parentNode); // #document
+
+        // parentElement
+        console.log(access.parentElement); // null :- because document is not element
+
+        var access2 = document.getElementById("head");
+        console.log(access2.parentElement); // body tag (element)
+
+    </script>
+</body>
+</html>

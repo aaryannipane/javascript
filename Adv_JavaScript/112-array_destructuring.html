@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY DESTRUCTURING</title>
+</head>
+<body>
+    <h1>Array Destructuring</h1>
+
+    <script>
+
+        var a = ["JavaScript", "SixMonth", "Geek"];
+
+        // array destructuring
+        var [CourseName, Duration, Tutor] = a;
+
+        console.log(CourseName);
+        console.log(Duration);
+        console.log(Tutor);
+
+        // selective value destructuring
+        var [Course, ,Tutor] = a;
+        document.write(`Course is ${Course} and Tutor is ${Tutor}`);
+
+        // default value
+        var [x, y=10] = [20]
+        console.log(x + " " + y); // 20 10
+
+    </script>
+
+</body>
+</html>

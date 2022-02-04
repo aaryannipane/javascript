@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGUMENT OBJECT</title>
+    <script>
+
+        function num(a, b, c)
+        {
+            // document.write(a + " " + b + " " + c);
+            // document.write(arguments[0] + " " + arguments[1] + " " + arguments[2]);
+
+            for(i=0; i<=arguments.length - 1; i++)
+            {
+                document.write(arguments[i]);
+                if(i!=arguments.length - 1){
+                    document.write(",");
+                }
+            }
+
+        }
+
+        num(10, 20, 30, 40, 50);
+        // OP:-
+        // 10,20,30,40,50
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

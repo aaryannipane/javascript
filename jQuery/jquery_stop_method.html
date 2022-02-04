@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY STOP METHOD</title>
+    <style>
+        .container{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 20px;
+            position: relative;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Stop method</h1>
+    <p>Methods are:</p>
+    <ul>
+        <li>stop()</li>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <h1>Text Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+    </div>
+    <button id="animatebtn">Animate</button>
+    <button id="stopbtn">Stop</button>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            $('#animatebtn').click(function () {
+                $('.container').animate({left:"700px"}, 3000)
+                $('.container').animate({fontSize:"17px"}, 2000)
+            })
+
+            // stop() it also works with fade slide animation too
+            $('#stopbtn').click(function() {
+                // $('.container').stop()      // stop only first animation
+                // $('.container').stop(true)      // stops all animations
+                $('.container').stop(true, true)      // second true is to take animation at the end of its time
+            })
+
+        })
+    </script>
+
+</body>
+</html>

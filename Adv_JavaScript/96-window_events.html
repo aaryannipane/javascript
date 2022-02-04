@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINDOW EVENTS</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+
+    <script>
+
+        // different methods to do same proccess
+
+        var body = document.getElementsByTagName('body')[0];
+        // FIRST
+        // body.setAttribute('onload', 'confirm("Hello Window Loaded")')
+
+
+        // SECOND
+        // window.onload = ()=>{document.getElementById('mydiv').textContent = "Hello World"}
+
+        // THIRD
+        function welcome(){
+            alert("window loaded")
+        }
+        window.addEventListener('load', welcome);
+
+    </script>
+    
+</body>
+</html>

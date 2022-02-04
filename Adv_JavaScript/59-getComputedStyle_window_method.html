@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTED STYLE GETCOMPUTEDSTYLE METHOD</title>
+    <style>
+        .border{
+            border: 5px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <p id="myp" class="border" style="background-color: aquamarine; color: darkblue;">paragraph</p>
+
+    <script>
+
+        var p = document.getElementById("myp");
+
+        // returns CSSStyleDecleration Object which is read only not to write
+        var allCSSProp = window.getComputedStyle(p);
+
+        console.log(allCSSProp);
+
+        // get specified property details
+        console.log(allCSSProp.color); // rgb(0, 0, 139)
+
+        // read computed style and write value to property by style property of element
+
+    </script>
+
+</body>
+</html>

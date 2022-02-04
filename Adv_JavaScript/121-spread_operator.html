@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPREAD OPERATOR</title>
+</head>
+<body>
+    <h1>Spread Operator</h1>
+
+    <script>
+
+        // spread for array
+        var a = [10, 20, 30];
+        var b = [...a, 60, 25, 90]; // [10, 20, 30, 60, 25, 90]
+        a[0]=50;
+        console.log(a[0]); // 50
+        console.log(b[0]); // 10
+
+        // spread for object
+        var a = {name:'Jhon', sirname:'Doe'};
+        var b = {...a, course:'JS'}; // {name:'Jhon', sirname:'Doe', course:'JS'}
+        a.name = 'Jacky';
+        console.log(a.name); // Jacky
+        console.log(b.name); // Jhon
+
+    </script>
+
+</body>
+</html>

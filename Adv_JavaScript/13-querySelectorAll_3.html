@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector with length</title>
+</head>
+<body>
+    <h1 id="show" class="geek">querySelectorAll length property</h1>
+    <p class="geek">hello everybody</p>
+    <div id="show2">
+        <p id="show1">my name is nothing</p>
+        <p class="geek">my name is nothing</p>
+    </div>
+    <p class="myclass">the end</p>
+    <!-- JavaScript -->
+    <script>
+
+        // length property
+        var data = document.querySelectorAll("p");
+        var len = data.length;
+        document.write("<hr>"+len);
+        console.log(len);
+
+    </script>
+</body>
+</html>

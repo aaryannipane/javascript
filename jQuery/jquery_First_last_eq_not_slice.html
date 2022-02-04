@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY FIRST LAST EQ NOT SLICE METHODS</title>
+    <style>
+        .first{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: gold;
+            padding: 20px;
+        }
+        .second{
+            margin-bottom: 10px;
+            border: 2px solid black;
+            background-color: lightcoral;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery first, last, eq, not, slice methods</h1>
+    <p><b>Filtering</b> Methods are:</p>
+    <p>Methods are:</p>
+    <ul>
+        <li>first()</li>
+        <li>last()</li>
+        <li>eq()</li>
+        <li>filter()</li>
+        <li>not()</li>
+        <li>slice()</li>
+    </ul>
+
+    <hr>
+    <div class="first">
+        <h1>first Box</h1>
+        <p>Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, perspiciatis?</p>
+    </div>
+    <ul>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grape</li>
+    </ul>
+    <div class="second">
+        <h1>Second Box</h1>
+        <p class="test">Lorem ipsum dolor sit amet consecteturFugiat doloribus assumenda praesentium adipisci delectus inventore odio id sit asperiores eveniet velit provident quos, cumque illum, ab modi, molestiae porro exercitationem.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, est?</p>
+    </div>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('document').ready(()=>{
+
+            //first() :-  targets element which is first in document or in any div
+            $('div p').first().css({'background-color':'coral'})
+
+            //last() :-  targets element which is last in document or in any div
+            $('.second p').last().css({'background-color':'gold'})
+
+            // eq() starts from 0 index
+            $('.first ~ ul li').eq(2).css({'background':'lightblue'})
+
+            // filter() filter paragraph which has class text
+            $('p').filter('.test').css({'border':'2px solid gold', 'border-radius':'10px'})
+
+            // not() target paragraph not with test class
+            $('div p').not('.test').css({'width':'400px'})
+
+            // slice() targets element of li from index 1 to excluding index 3
+            $('div ~ ul li').slice(1,3).css({'border':'2px solid black'})
+
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array some method</title>
+</head>
+<body>
+    <h1>array every method</h1>
+    <script>
+
+        // Array.some():The some() method check if some array values pass a test.
+
+        // This example check if some array values are larger than 18: if pass then true else false
+        var numbers = [45, 4, 9, 16, 25];
+        var someOver18 = numbers.some(myFunction);
+        console.log(someOver18); //true
+
+        function myFunction(value, index, array) {
+        return value > 18;
+        }
+
+    </script>
+</body>
+</html>

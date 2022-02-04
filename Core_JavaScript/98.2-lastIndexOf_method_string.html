@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LASTINDEXOF METHOD STRING</title>
+</head>
+<body>
+    <h1>lastIndexOf() method String</h1>
+    <p>Please locate where 'locate' occurs!</p>
+
+    <script>
+
+        var str = "Please locate where 'locate' occurs!";
+        console.log(str.lastIndexOf('locate'))
+
+        var str2=''
+        for(i=str.lastIndexOf('locate');i<=str.lastIndexOf('e');i++){
+            str2 +=str[i];
+        }
+        console.log(str2);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCATION OBJECT</title>
+</head>
+<body>
+    <h1 id="section">location object</h1>
+    <a id="hash" href="#section">Click here for hash</a> <br>
+    <button id="reload">Reload page</button>
+    <button id="assign">Assign page</button>
+    <button id="replace">Replace page can't UNDO</button>
+    <hr>
+
+
+    <script>
+
+        // PROPERTIES   
+        document.write(`hash - > ${window.location.hash}<br>`);
+        document.write(`host - > ${window.location.host}<br>`);
+        document.write(`hostname - > ${window.location.hostname}<br>`);
+        document.write(`href - > ${window.location.href}<br>`);
+        document.write(`pathname - > ${window.location.pathname}<br>`);
+        document.write(`port - > ${window.location.port}<br>`);
+        document.write(`protocol - > ${window.location.protocol}<br>`);
+        document.write(`search - > ${window.location.search}<br>`);
+        function hf(){
+            window.location.reload();
+        }
+        document.getElementById('hash').addEventListener('click', hf);
+
+        // METHODS
+        function rf(){
+            window.location.reload();
+            // document.write("window reloaded");
+        }
+
+        function af(){
+            window.location.assign('https://www.google.com');
+        }
+
+        function ref(){
+            window.location.replace('https://www.google.com');
+        }
+        
+        document.getElementById('reload').addEventListener('click', rf);
+        document.getElementById('assign').addEventListener('click', af);
+        document.getElementById('replace').addEventListener('click', ref);
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <style>
+        #check{
+            outline-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="myform" id="meraform">
+        <input id="check" name="firstName" type="text" placeholder="First Name"><br>
+        <input type="submit"  name="validate" value="Submit"></input>
+    </form>
+
+    <script>
+        var formN = document.getElementById('meraform');
+
+        function validate(){
+            var pttrn = /^([^0-9\W]*)$/;
+            var data = formN.firstName.value;
+            if(pttrn.test(data)){
+                formN.firstName.style.border = "2px solid green";
+            }
+            else{
+                formN.firstName.style.border = "2px solid red";
+            }
+        }
+        document.getElementById('check').addEventListener('keyup', validate);
+
+    </script>
+
+</body>
+</html>

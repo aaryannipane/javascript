@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLTableSectionElement</title>
+</head>
+<body>
+    <table border="1" id="mytab">
+        <caption>My Table Caption</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id="mytbody">
+            <tr>
+                <td>11</td>
+                <td>Rahul</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Doe</td>
+                <td>PHP</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>55</td>
+                <td>Soham</td>
+                <td>JSP</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var tbody = document.getElementById("mytbody");
+
+        // rows Property
+        var noRows = tbody.rows;
+        console.log(noRows);
+        // get any one row by giving index no
+        console.log(noRows[0]);  // extra :- use innerHTML to modify data inside that row
+
+        // insertRow()
+        var uprow = tbody.insertRow();
+        uprow.innerHTML = "<td>101</td><td>Ravan</td><td>Python</td>";
+
+        // deleteRow()
+        tbody.deleteRow(1) // roved {22 doe PHP}
+
+    </script>
+
+</body>
+</html>

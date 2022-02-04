@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAROUSEL</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(44, 44, 44);
+        }
+
+        .carousel{
+            overflow: hidden;
+            max-width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .carousel .carousel_item,
+        .carousel .carousel--hidden{
+            display: none;
+        }
+
+        .carousel .carousel_item img{
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            user-select: none;
+        }
+
+        .carousel .carousel_item--visible{
+            display: block;
+            animation: fadeShow 1s;
+        }
+        @keyframes fadeShow{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+        .carousel .carousel_actions{
+            display: flex;
+            justify-content: space-between;
+            user-select: none;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel .carousel_actions button{
+            border-radius: 50px;
+            border: 1px solid white;
+            height: 40px;
+            width: 40px;
+            font-weight: bold;
+            font-size: larger;
+            color: aliceblue;
+            background-color: rgba(128, 128, 128, 0);
+            cursor: pointer;
+            transition: all .2s;
+            /* backdrop-filter: blur(5px); */
+        }
+
+        .carousel .carousel_actions button:hover{
+            background-color: rgba(245, 245, 245, 0.5);
+            box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5);
+            color: black;
+        }
+        
+        .carousel .carousel_actions button:active{
+            background-color: rgba(145, 12, 12, 0.5);
+            /* box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5); */
+        }
+
+        .carousel .carousel_actions button#carousel_btn_prev{
+            margin-left: 50px;
+        }
+
+        .carousel .carousel_actions button#carousel_btn_next{
+            margin-right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel_item carousel_item--visible"><img src="./img/img1.jpg" alt=".."></div>
+        <div class="carousel_item"><img src="./img/img2.jpg" alt=".."></div>
+        <div class="carousel_item"><img src="./img/img3.jpg" alt=".."></div>
+        <div class="carousel_item"><img src="./img/img5.jpg" alt=".."></div>
+
+        <div class="carousel_actions">
+            <button id="carousel_btn_prev" aria-label="Previous slide"><</button>
+            <button id="carousel_btn_next" aria-label="Next slide">></button>
+        </div>
+    </div>
+
+    <!--JAVASCRIPT-->>
+    <script>
+
+        // important object slideaction
+        class SlideAction {
+
+            static updateSlidePosition(slideIndex){
+                for(let slide of slides){
+                    // we can use remove method to remove element from array
+                    slide.classList.remove('carousel_item--visible');
+                    if(slides[slideIndex] == slide){
+                        slide.classList.add('carousel_item--visible');
+                    }
+                    // console.log(slide);
+                }
+            }
+
+            static moveToNextSlide(){
+                if(slideIndex == totalSlide-1){
+                    slideIndex = 0;
+                    // console.log(slideIndex);
+                }else{
+                    slideIndex += 1;
+                    // console.log(slideIndex);
+                }
+                SlideAction.updateSlidePosition(slideIndex);
+            }
+
+            static moveToPrevSlide(){
+                if(slideIndex == 0){
+                    slideIndex = totalSlide - 1;
+                    // console.log(slideIndex);
+                }else{
+                    slideIndex -= 1;
+                    // console.log(slideIndex);
+                }
+                SlideAction.updateSlidePosition(slideIndex);
+            }
+        }
+
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName('carousel_item'); // returns an array
+        const totalSlide = slides.length;  // for looping and to index setting purpose
+        // console.log(totalSlide);
+
+        // adding click events to button to update carousel image
+        document.getElementById('carousel_btn_prev').addEventListener('click', ()=>{
+            SlideAction.moveToPrevSlide();
+            
+        })
+        document.getElementById('carousel_btn_next').addEventListener('click', ()=>{
+            SlideAction.moveToNextSlide();
+            
+        })
+
+        // adding event on arrow buttons to change carousel
+        window.addEventListener('keyup', (e)=>{
+            if(e.key == "ArrowRight"){
+                // SlideAction.moveToNextSlide();
+                document.getElementById('carousel_btn_next').click();
+            }
+            else if(e.key == "ArrowLeft"){
+                // SlideAction.moveToPrevSlide();
+                document.getElementById('carousel_btn_prev').click();
+            }
+        })
+
+        // IMG AUTO SLIDE
+        // setInterval(SlideAction.moveToNextSlide, 2000);
+
+        document.getElementsByClassName('carousel')[0].addEventListener('mouseover');
+
+    </script>
+
+</body>
+</html>

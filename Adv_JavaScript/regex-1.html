@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGEX</title>
+    <style>
+        svg{
+            width: 200px;
+            height: 200px;
+            fill: antiquewhite;
+        }
+        path{
+            
+            fill: rgb(255, 0, 43);
+        }
+    </style>
+</head>
+<body>
+    <h1>Regular Expression</h1>
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://www.blobmaker.app/">
+            <path fill="#FF0066" d="M31.8,-55.3C37.3,-51.8,35.1,-35.4,41,-24.1C46.9,-12.7,60.7,-6.4,68.9,4.7C77,15.8,79.5,31.6,74.1,43.7C68.7,55.8,55.3,64.2,41.6,72.2C27.9,80.3,14,87.9,0.8,86.5C-12.3,85.1,-24.7,74.6,-37.2,65.9C-49.8,57.2,-62.5,50.3,-63.2,39.7C-63.8,29,-52.2,14.5,-51.2,0.6C-50.2,-13.3,-59.7,-26.6,-57.5,-34.5C-55.2,-42.4,-41.3,-44.9,-29.8,-44.9C-18.3,-44.9,-9.1,-42.3,2,-45.8C13.1,-49.3,26.2,-58.7,31.8,-55.3Z" transform="translate(100 100)" />
+        </a>
+      </svg>
+    <script>
+        var text = "'Hello how are you'";
+        console.log(text);
+
+        // regex => /pattern/modifier
+
+        // to search word in sentence (Case Sensitive)
+        var ptrn = /hello/;
+        console.log(`Word Search "hello" case sensitive -- ${ptrn.test(text)}`); // false
+
+        // to search word in sentence (Case Insensitive)
+        ptrn = /hello/i ; // 'i' for case insensitive
+        console.log(`Word search "hello" case insensitive -- ${ptrn.test(text)}`); // true
+
+        // multiple word search in sentence
+        ptrn = /hello | are/i; // '|' for multiple word search it is like or hello or are
+        console.log(`Multiple word search "hello | are" -- ${ptrn.test(text)}`);
+
+        // to find multiple charecter set 
+        ptrn = /[hero]/i; // '[charecters]' to search each charecter seperately same as like /h|e|r|o/i
+        console.log(`Multiple Charecters search "[hero] same as /h|e|r|o/i" -- ${ptrn.test(text)}`); // true
+
+        // to find charecters except some character
+        ptrn = /[^hero]/i; // '^' for excluding h,e,r,o charexters and search another charecters
+        console.log(`Find characters excluding some characters "[^hero]" -- ${ptrn.test(text)}`); //true
+
+        // to find specified charecter range
+        ptrn = /[a-z]/i; // '-' to make range from a to z
+        console.log(`Find specified character range "[a-z]" -- ${ptrn.test(text)}`); // true
+
+        // to find text ends with specfied text
+        const regex = /file[1-5]/gmi;
+        const str = `file1 file2 file3 file# file? file5`;
+        let m;
+
+        // ITERATION WITH EXEC METHOD (TOUGH)
+
+        // while ((m = regex.exec(str)) !== null) {
+        //     // This is necessary to avoid infinite loops with zero-width matches
+        //     if (m.index === regex.lastIndex) {
+        //         regex.lastIndex++;
+        //     }
+            
+        //     // The result can be accessed through the `m`-variable.
+        //     m.forEach((match, groupIndex) => {
+        //         console.log(`Found match, group ${groupIndex}: ${match}`);
+        //         console.log(regex.lastIndex + " " + m.index);
+        //     });
+        // }
+
+        // EASY
+        // match(regex):- it will return array of result or null
+        let result = str.match(regex);
+        console.log(result);
+
+        // search word knowing only first and last character 
+        text = "JS is programming language wab used for web";
+        ptrn = /w[a-z]b/gi; 
+        console.log(text.match(ptrn)); // [wab] not coming web :( use g for global in modifier of ptrn than it will come
+
+
+
+    </script>
+</body>
+</html>

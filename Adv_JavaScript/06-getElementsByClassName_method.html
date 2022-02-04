@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName METHOD</title>
+</head>
+<body>
+    <h1>getElementsByClassName method</h1>
+    <p class="geek">hello students</p>
+    <p>what are you doing</p>
+    <p class="geek">well students!</p>
+    <div>
+        <h2>Happy students</h2>
+        <p class="geek color">do some work</p>
+    </div>
+</body>
+<!-- javascript -->
+<script>
+
+    // getElementsByClassName() method 
+    var result = document.getElementsByClassName("geek"); // elements only with class geek
+    document.write(result + "<br>");
+    console.log(result);
+
+    var result2 = document.getElementsByClassName("geek color"); // elements only with class "geek color"
+    document.write(result2 + "<br>");
+    console.log(result2);
+
+</script>
+</html>

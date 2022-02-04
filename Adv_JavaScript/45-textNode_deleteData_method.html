@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXTNODE DELETEDATA METHOD</title>
+</head>
+<body>
+    <h2 id="myh2">Hello I am going to vanish</h2>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        var myh2 = document.getElementById("myh2");
+        var text = myh2.firstChild;
+
+        // deleteData(start index, length -1)
+        text.deleteData(10, 6);
+
+    </script>
+
+</body>
+</html>

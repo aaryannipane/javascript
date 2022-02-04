@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array every method</title>
+</head>
+<body>
+    <h1>Array every method</h1>
+    <script>
+
+        // Array.every(): The every() method check if all array values pass a test.
+
+
+        // This example check if all array values are larger than 18: if not then false else true
+        var age = [10,20,30,45];
+        var over18 = age.every(myfunction);
+        console.log(over18); // false    
+
+        function myfunction(value, index, array){
+            return value > 18;
+        }
+
+
+    </script>
+</body>
+</html>

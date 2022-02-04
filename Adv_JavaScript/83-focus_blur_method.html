@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCUS BLUR METHOD</title>
+</head>
+<body>
+    <h1>Focus And Blur Method</h1>
+    <button onclick="nwbtn()">Open New Window</button>
+    <button onclick="focusbtn()">Focus window</button>
+    <button onclick="blurbtn()">Blur Window</button>
+
+
+    <script>
+
+        var newwindow;
+        function nwbtn(){
+            newwindow = window.open("https://www.google.com",'_blank', 'height=200,width=200');
+        }
+        function focusbtn(){
+            newwindow.focus();
+        }
+        function blurbtn(){
+            newwindow.blur();
+        }
+
+    </script>
+
+</body>
+</html>

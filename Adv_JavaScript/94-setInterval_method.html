@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETINTERVAL METHOD</title>
+</head>
+<body>
+    <h1 id="update">setInterval Method</h1>
+
+    <script>
+        var num = 0;
+        function Update(){
+            if(num==60){
+                num = 0;
+                document.getElementById('update').textContent = 0;
+            }
+            if(num<60){
+                document.getElementById('update').textContent = num;
+                num++
+            }
+        }    
+
+        var timeoutID = setInterval(Update, 1000);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXTCONTENT PRPERTY</title>
+</head>
+<body>
+    <p id="myp">Hello <span>World</span><em>!</em></p>
+
+    <script>
+
+        var p = document.getElementById("myp");
+
+        // get textContent inside p tag
+        // textContent --> it returns all text nodes present in p tag wheter it is in another tag except comments & peocessing instruction
+        var text = p.textContent; // Hello World!
+        console.log(text);
+
+        // set text content in p tag
+        p.textContent = "Bye World!";
+
+    </script>
+
+</body>
+</html>

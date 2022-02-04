@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName more specific</title>
+</head>
+<body>
+
+    <h1>More specific</h1>
+    <p id="geek">
+        <!-- get only this span tag by getElementsByTagName() method -->
+        <span>Hello</span>
+        <em>Aryan</em>
+    </p>
+    <div>
+        <p>
+            <span>Welcome to website</span>
+        </p>
+    </div>
+    
+</body>
+<!-- javascript -->
+<script>
+
+    // getElementsByTagName() more specific
+
+    var getspan = document.getElementById("geek");
+    var result = getspan.getElementsByTagName("span");
+
+    document.write(result);
+    console.log(result);
+
+</script>
+</html>

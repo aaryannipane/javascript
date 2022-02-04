@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopPropagation & stopImmediatePropagation</title>
+    <style>
+        #one{
+            height:500px;
+            width: 500px;
+            background: lightblue;
+        }
+        #two{
+            width: 400px;
+            height: 400px;
+            background: lightcoral;
+        }
+        #three{
+            width: 300px;
+            height: 300px;
+            background: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">1
+        <div id="two">2
+            <div id="three">3</div>
+        </div>
+    </div>
+
+    <script>
+
+        function div1(e){
+            // this --> element chosen for event
+            this.style.backgroundColor = "red";
+        }
+        function div2(e){
+            this.style.backgroundColor = "green";
+            // to stop second handler of same elements same event and to stop propagation too we use
+            e.stopImmediatePropagation();
+        }
+        function div2_2(e){
+            this.style.width = '250px';
+            // to stop propagation (only div3 and div2 will response on event)
+            // e.stopPropagation();
+        }
+        function div3(e){
+            this.style.backgroundColor = "blue";
+            // to stop propagation (only div3 will response on event)
+            // e.stopPropagation();
+        }
+
+        var divOne = document.getElementById("one");
+        var divTwo = document.getElementById("two");
+        var divThree = document.getElementById("three");
+
+        divOne.addEventListener('click', div1, false);
+        divTwo.addEventListener('click', div2, false);
+        divTwo.addEventListener('click', div2_2, false);
+        divThree.addEventListener('click', div3, false);
+
+    </script>
+
+</body>
+</html>

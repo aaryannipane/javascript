@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMOVE METHOD</title>
+</head>
+<body>
+    <h1>This is Aryan Nipane</h1>
+    <p id="para">this text will be removed by clicking button</p>
+    <button id="remove">REMOVE</button>
+
+    <script>
+        class UI {
+            static delete(ele){
+                ele.remove(); // remove() method is used to remove any tag element from the html 
+            }
+        }
+
+        const text = document.querySelector('#para');
+        document.querySelector('#remove').addEventListener('click',()=>UI.delete(text), false);
+
+    </script>
+</body>
+</html>

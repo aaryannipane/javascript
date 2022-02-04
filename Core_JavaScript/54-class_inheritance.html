@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASS INHERITANCE</title>
+    <script>
+
+        class Father{
+            showFmoney(){
+                return "Father's money <br>";
+            }
+        }
+
+        // class inheritance
+        class Son extends Father{
+            showSmoney(){
+                return "Son's money <br>";
+            }
+        }
+
+        var s = new Son();
+
+        // SON CLASS OBJECT ACCESS TO FATHER CLASS
+        document.write(s.showFmoney());
+        document.write(s.showSmoney());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

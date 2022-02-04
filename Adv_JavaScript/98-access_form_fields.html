@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESSING FORM FIELDS</title>
+</head>
+<body>
+    <form action="" name="myform" id="meraform">
+        <input name="firstName" type="text" placeholder="First Name"><br><br>
+        <input id="lastName" type="text" placeholder="Last Name"> 
+    </form>
+
+    <script>
+        var formN = document.getElementById('meraform');
+
+        // FIRST
+        console.log(formN.elements[0]);
+
+        // SECOND
+        console.log(formN.elements['firstName']);
+
+        // THIRD
+        console.log(formN.firstName);
+
+        // FOURTH
+        console.log(formN.lastName);
+
+        // FIFTH
+        console.log(document.getElementById('lastName'));
+
+        // 
+        console.log(document.querySelector('#lastName').value = 'hello');
+
+    </script>
+
+</body>
+</html>

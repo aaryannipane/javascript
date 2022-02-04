@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLITTEXT METHOD</title>
+</head>
+<body>
+    <h2 id="myh2">Hello User</h2>
+
+    <script>
+
+        var myh2 = document.getElementById("myh2");
+        var text = myh2.firstChild;
+
+        // splitText(start index)
+        text.splitText(2); // "he" "llo User"
+        console.log(myh2);
+
+    </script>
+
+</body>
+</html>

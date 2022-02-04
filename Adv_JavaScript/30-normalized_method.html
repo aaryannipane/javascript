@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORMALIZED METHOD</title>
+</head>
+<body>
+    <div class="container">
+        <p id="para"></p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // create (i) text node
+        var itext = document.createTextNode("I ");
+
+        // create (am) text node
+        var amtext = document.createTextNode("am  ");
+
+        // create (para) text node
+        var paratext = document.createTextNode("paragraph by js");
+
+        // access to para id tag
+        var para = document.getElementById("para");
+
+        // append text nodes
+        para.appendChild(itext);
+        para.appendChild(amtext);
+        para.appendChild(paratext);
+
+        console.log(para.childNodes); //without normalize method
+
+        // normalized method
+        para.normalize();
+
+        console.log(para.childNodes);
+
+
+    </script>
+
+</body>
+</html>

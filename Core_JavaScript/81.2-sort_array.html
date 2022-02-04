@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORT ARRAY</title>
+</head>
+<body>
+    <script>
+
+        var fruits = ["Banana", "Cherry", "Apple"]
+
+        // sort() method :- it will sort array alphabetically or numerically
+        document.write("sort Array = "+fruits.sort() + "<br>");
+
+        var num = [25, 55, 3, 100];
+        document.write("Error Sort Array = "+num.sort() + "<br>"); // 100,25,3,55
+        // incorrect result to solve this we can use below step
+
+        // sort array in ascending order
+        document.write("ascending Array = "+num.sort((a, b) => {return a-b})); // 3, 25, 55, 100
+
+        // sort array in descending order
+        document.write("<br>descending Array = " + num.sort((a,b)=>{return b-a})+"<br>"); // 100, 55, 25, 3
+
+        // if total is negative than returns 'a'
+        // if total is positive then returns 'b'
+
+        /*When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+            If the result is negative a is sorted before b.
+
+            If the result is positive b is sorted before a.
+
+            If the result is 0 no changes are done with the sort order of the two values.
+
+            Example:
+
+            The compare function compares all the values in the array, two values at a time (a, b).
+
+            When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+
+            The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.*/
+
+
+
+        // Sorting an Array in Random Order
+        document.write("Random Array = "+num.sort((a, b)=>{return 0.5 - Math.random()}) +"<br>");
+
+        // The Fisher Yates Method
+        /*The above example, array.sort(), is not accurate, it will favor some numbers over the others.
+        The most popular correct method, is called the Fisher Yates shuffle, and was introduced in data science as early as 1938!*/
+
+        for(var i = num.length -1; i>0; i--){
+            j = Math.floor(Math.random()*i);
+            k = num[i];
+            num[i] = num[j];
+            num[j] = k;
+        }
+        document.write("The Fisher Yates Method => "+num +"<br>")
+
+        // Sorting Object Arrays
+        var cars = [
+        {type:"Volvo", year:2016},
+        {type:"Saab", year:2001},
+        {type:"BMW", year:2010}
+        ];
+        cars.sort((a, b)=>{return a.year - b.year})
+        console.log(cars[0].year);
+        console.log(cars[1].year);
+        console.log(cars[2].year);
+
+        // Comparing string properties is a little more complex:
+        cars.sort((a,b)=>{
+            x = a.type.toLowerCase();
+            y = b.type.toLowerCase();
+            if(x<y){return -1}
+            if(x>y){return 1}
+            return 0;
+        })
+        console.log("--------------------------------------------------------");
+        console.log(cars[0].type);
+        console.log(cars[1].type);
+        console.log(cars[2].type);
+
+    </script>
+</body>
+</html>

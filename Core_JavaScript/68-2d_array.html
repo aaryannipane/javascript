@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE 2D ARRAY</title>
+    <script>
+
+        // ARRAY LITERAL
+        var stud = [[], [], []];
+
+        // ARRAY CONSTRUCTOR
+        var stud2 = new Array([], [], []);
+
+        // FOR LOOP
+
+        var rows = 3;
+        var cols = 3;
+        var stud3 = [];
+
+        for(let i=0; i<rows; i++)
+        {
+            let a = 1;
+            stud3[i] = [];
+            for(let j=0; j<cols; j++)
+            {
+                stud3[i][j] = a;
+                a++;
+            }
+            
+        }
+
+        document.write(stud3);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

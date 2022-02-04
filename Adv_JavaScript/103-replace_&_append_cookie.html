@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPLACE & APPEND COOKIE</title>
+</head>
+<body>
+    <h1>Replace & Append Cookie</h1>
+
+    <script>
+
+        document.cookie = "user=Jhon";
+        var data = `Before replace --> ${document.cookie}`;
+        console.log(data);
+
+        // replace cookie
+        document.cookie = "user=Doe";
+        var data = `After replace --> ${document.cookie}`;
+        console.log(data);
+
+        // Append cookie
+        document.cookie = "userAge=18";
+        var data = `Append cookie --> ${document.cookie}`;
+        console.log(data);
+
+
+
+    </script>
+
+</body>
+</html>

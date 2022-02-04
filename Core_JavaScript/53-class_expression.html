@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASS EXPRESSION</title>
+    <script>
+
+        // UNNAMED CLASS
+        var Mobile = class {
+            constructor(){
+                this.show = function(){return " Unnamed class<br> "};
+            }
+        };
+
+        // NAMED CLASS
+        var Car = class Car2{
+            constructor() {
+                this.display = function(){return " Named class<br> "};
+            }
+        };
+
+
+        // objects
+        var nokia = new Mobile();
+        var BMW = new Car();
+
+        // ACCESS TO PROPERTY
+        document.write(nokia.show());
+        document.write(BMW.display());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

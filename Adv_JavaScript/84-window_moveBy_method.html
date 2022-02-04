@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVEBY METHOD</title>
+</head>
+<body>
+    <h1>Moveby method</h1>
+    <button id="nwbtn">Open New Window</button>
+    <button id="rightbtn">Move Right</button>
+
+    <script>
+
+        var newwindow;
+        function nwbtn(){
+            newwindow = window.open("https://www.google.com",'_blank', 'height=200,width=200');
+        }
+
+        function movebtn(){
+            newwindow.focus();
+            newwindow.moveBy(200,200);
+        }
+
+        document.getElementById('nwbtn').addEventListener("click", nwbtn);
+        document.getElementById('rightbtn').addEventListener("click", movebtn);
+
+
+    </script>
+    
+</body>
+</html>
