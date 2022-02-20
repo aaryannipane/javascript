@@ -1,0 +1,24 @@
+ASYNC AND AWAIT
+
+async - This keyword is used to tun a function declaration to asyne function.
+
+asyne Function - An asyne function is a function declared with the async keyword.
+An async function is a function that knows how to expect the possibility of the await
+keyword being used to invoke asynchronous code. It returns a Promise.
+
+await - The await operator is used to wait for a Promise. It can only be used inside
+an async function within regular JavaScript code.
+await can be put in front of any async promise-based function to pause your code on
+that line until the promise fulfills, then return the resulting value.
+
+
+ASYNC Function :- 
+
+    Async Function
+        async function function_name(){....}
+
+    Async Function Expression
+        let function_name = async function () {.....}
+
+    Async Arrow Function
+        let function_name = async ()=>{.....}

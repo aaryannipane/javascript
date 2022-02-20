@@ -1,0 +1,62 @@
+FETCH API 
+
+The Fetch API provides an interface for fetching resources (including across the network).
+It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more
+powerful and flexible feature set.
+https:/developer.mozilla.org/en-US/docs/Web/API/Fetch_ API
+
+
+
+fetch() METHOD :-
+    The fetch() method of the WindowOrWorkerGlobalScope mixin starts the process of fetching a
+    resource from the network, returning a promise which is fulfilled once the response is available. The
+    promise resolves to the Response object representing the response to your request.
+    It returns a Promise that resolves to a Response object.
+
+    Syntax:- fetch(resource, init)
+
+    resource - This defines the resource that you wish to fetch. It can be URL object, Request Object and
+    URL of resource.
+
+    init (optional) -
+        - method- The request method, eg., GET, POST.
+        - headers - Any headers you want to add to your request, contained withina Headers object
+        or an object literal with ByteString values.
+        - body - Any body that you want to add to your request: this can be a Blob, BufferSource,
+        - FormData - URLSearchParams, USVString, or ReadableStream object. Note that a request
+        using the GET or HEAD method cannot have a body.
+        - mode-The mode you want to use for the request, e.g., cors, no-cors, or same-orign.
+        - credentials - The request credentials you want to use for the request: omit, same-origin, or
+        include. To automatically send cookies for the current domain, this option must be provided.
+        Starting with Chrome 50, this property also takes a FederatedCredential instance or a
+        PasswordCredential instance.
+        - cache - The cache mode you want to use for the request.
+
+    Example:
+        fetch('https:/geekyshows.com/post', {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: body,
+            cache: 'default',
+        })
+
+
+METHODS :- 
+
+    Body.arrayBuffer) - It returns a promise that resolves with an ArrayBuffer representation of the
+    request body.
+    Body.blob()- It returns a promise that resolves with a Blob representation of the request body.
+    Body.formData()- It returns a promise that resolves with a FormData representation of the request
+    body.
+    Bodyjson()- It returns a promise that resolves with a JSON representation of the request body.
+    Body.text()- It returns a promise that resolves with an USVString (text) representation of the request
+    body.
+
+
+A fetch() promise only rejects when a network error is encountered (which is usually when there's a
+permissions issue or similar).
+A fetch() promise does not reject on HTTP errors (404, etc.). Instead, a then() handler must check the
+Response.ok and/or Response.status properties.
